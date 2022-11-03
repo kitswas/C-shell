@@ -11,8 +11,27 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
+#include "main.h"
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
+/**
+ * @brief Execution starts here
+ */
+int main()
+{
+	cls;
+	printf("Hello ");
+	printf("World!");
+	loadSettings();
+	//loop
+	//cleanup
+	return 0;
+}
+
+int printprompt()
+{
+}
+
+int loadSettings()
+{
 }

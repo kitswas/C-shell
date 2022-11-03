@@ -24,16 +24,14 @@ Then execute the following commands to run the program:
 
 Windows:
 
-```bash
-cd build
-.\executable
+```cmd
+.\build\executable
 ```
 
 Linux:
 
 ```bash
-cd build
-./executable
+./build/executable
 ```
 
 ## Generating Documentation
