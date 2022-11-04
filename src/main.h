@@ -44,7 +44,7 @@ int execute(int nargs, char *command, char **args);
 int load_settings();
 
 /**
- * @brief I keep looping, looping till it the user exits
+ * @brief I keep looping, looping till the user exits.
  *
  * Implementation incomplete.
  */
