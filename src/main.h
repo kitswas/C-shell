@@ -42,7 +42,9 @@ int print_prompt();
 /**
  * @brief Reads a line from stdin.
  *
- * @return The number of characters read.
+ * @param buffer The buffer to write into.
+ * @param buffer_size The size of the provided buffer.
+ * @return int The number of characters read.
  */
 int read_line(char *buffer, int buffer_size);
 
