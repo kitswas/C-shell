@@ -31,6 +31,15 @@ int main()
 	return 0;
 }
 
+int execute(int nargs, char *command, char **args)
+{
+	if (!strcasecmp(command, "exit"))
+		exit(EXIT_SUCCESS);
+	else if (!strcasecmp(command, "cls"))
+		cls;
+	return 0;
+}
+
 int load_settings()
 {
 }
@@ -50,7 +59,13 @@ int loop()
 		{
 			printf("You entered: %s\n", args[i]);
 		}
+
+		int status = 0;
+		if (nargs > 0) // ignore empty lines
+			status = execute(nargs - 1, args[0], (char **)(nargs > 1 ? args[1] : NULL));
+
 		free(line);
+		free(args);
 	}
 }
 
