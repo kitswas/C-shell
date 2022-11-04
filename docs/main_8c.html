@@ -109,11 +109,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution starts here.  <a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">More...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada308c0ea28c53627e71ef3a4ef600ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ada308c0ea28c53627e71ef3a4ef600ef">execute</a> (int nargs, char *command, char **args)</td></tr>
+<tr class="memdesc:ada308c0ea28c53627e71ef3a4ef600ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command.  <a href="main_8c.html#ada308c0ea28c53627e71ef3a4ef600ef">More...</a><br /></td></tr>
+<tr class="separator:ada308c0ea28c53627e71ef3a4ef600ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad074a0780bf1da0e5d495a0b54c754a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a> ()</td></tr>
 <tr class="memdesc:ad074a0780bf1da0e5d495a0b54c754a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will load configuration file(s).  <a href="main_8c.html#ad074a0780bf1da0e5d495a0b54c754a4">More...</a><br /></td></tr>
 <tr class="separator:ad074a0780bf1da0e5d495a0b54c754a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc3e3d6009223609dc366720373a7d94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abc3e3d6009223609dc366720373a7d94">loop</a> ()</td></tr>
-<tr class="memdesc:abc3e3d6009223609dc366720373a7d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">I keep looping, looping till it the user exits.  <a href="main_8c.html#abc3e3d6009223609dc366720373a7d94">More...</a><br /></td></tr>
+<tr class="memdesc:abc3e3d6009223609dc366720373a7d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">I keep looping, looping till the user exits.  <a href="main_8c.html#abc3e3d6009223609dc366720373a7d94">More...</a><br /></td></tr>
 <tr class="separator:abc3e3d6009223609dc366720373a7d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7423290ea652e0d8f1eeba75606df89"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae7423290ea652e0d8f1eeba75606df89">parse_line</a> (char *line, size_t line_size, int *nargs)</td></tr>
 <tr class="memdesc:ae7423290ea652e0d8f1eeba75606df89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes the line.  <a href="main_8c.html#ae7423290ea652e0d8f1eeba75606df89">More...</a><br /></td></tr>
@@ -137,6 +140,55 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-11-03 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="ada308c0ea28c53627e71ef3a4ef600ef" name="ada308c0ea28c53627e71ef3a4ef600ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada308c0ea28c53627e71ef3a4ef600ef">&#9670;&#160;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int execute </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nargs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nargs</td><td>Number of arguments to the command. </td></tr>
+    <tr><td class="paramname">command</td><td>The command to execute. </td></tr>
+    <tr><td class="paramname">args</td><td>The list of arguments to the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
+<p>Available commands:</p><ul>
+<li>cls - clears the screen</li>
+<li>exit - terminates the terminal </li>
+</ul>
+
+</div>
+</div>
 <a id="ad074a0780bf1da0e5d495a0b54c754a4" name="ad074a0780bf1da0e5d495a0b54c754a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad074a0780bf1da0e5d495a0b54c754a4">&#9670;&#160;</a></span>load_settings()</h2>
 
@@ -172,7 +224,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>I keep looping, looping till it the user exits. </p>
+<p>I keep looping, looping till the user exits. </p>
 <p >Implementation incomplete. </p>
 
 </div>
