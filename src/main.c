@@ -39,8 +39,9 @@ int loop()
 	while (true)
 	{
 		print_prompt();
-		char *line = malloc(LINE_BUFFER_SIZE * sizeof(*line));
-		read_line(line, LINE_BUFFER_SIZE);
+		size_t line_size = LINE_BUFFER_SIZE;
+		char *line = malloc(line_size * sizeof(*line));
+		read_line(line, line_size);
 		printf("You entered: %s\n", line); // debuggging only
 
 		free(line);
