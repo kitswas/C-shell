@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -48,6 +49,9 @@ int loop()
 
 int print_prompt()
 {
+	char hostname[MAXHOSTNAMELEN];
+	gethostname (hostname, MAXHOSTNAMELEN);
+	printf("%s@%s$ ", getenv("USER"), hostname);
 }
 
 int read_line(char *buffer, int buffer_size)
