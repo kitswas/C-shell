@@ -13,6 +13,7 @@
 #define cls printf("\033[2J\033[1;1H"); // Clears the screen on both Windows 10 and Linux. Doesn't work on old Windows OSes
 #define LINE_BUFFER_SIZE 1024
 #define MAXHOSTNAMELEN 32
+#define C_SHELL_TOK_DELIM " \t\r\n"
 
 // global variables here
 
@@ -33,6 +34,15 @@ int load_settings();
  * Implementation incomplete.
  */
 int loop();
+
+/**
+ * @brief Tokenizes the line.
+ *
+ * @param line A string.
+ * @param line_size Length of the string.
+ * @return char** An array of tokens.
+ */
+char **parse_line(char *line, size_t line_size, int *nargs);
 
 /**
  * @brief Prints username\@machinename.
