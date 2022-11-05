@@ -64,7 +64,7 @@ int loop()
 
 		int status = 0;
 		if (nargs > 0) // ignore empty lines
-			status = execute(nargs - 1, args[0], (char **)(nargs > 1 ? args[1] : NULL));
+			status = execute(nargs, args[0], args);
 
 		free(line);
 		free(args);
