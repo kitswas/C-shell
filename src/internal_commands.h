@@ -17,4 +17,13 @@
 
 // functions here
 
+/**
+ * @brief Write arguments to the standard output.
+ *
+ * @details
+ * Display the ARGs, separated by a single space character
+ * and followed by a newline, on the standard output.
+ */
+int echo(int nargs, char **args);
+
 #endif

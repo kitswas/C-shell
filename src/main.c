@@ -40,11 +40,7 @@ int execute(int nargs, char *command, char **args)
 	}
 	else if (!strcasecmp(command, "echo"))
 	{
-		for (int i = 1; i < nargs; i++)
-		{
-			printf("%s ", args[i]);
-		}
-		printf("\n");
+		echo(nargs, args);
 	}
 	else if (!strcasecmp(command, "exit"))
 	{
