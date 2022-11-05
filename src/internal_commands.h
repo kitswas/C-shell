@@ -9,9 +9,12 @@
 #ifndef INTERNAL_COMMANDS_H
 #define INTERNAL_COMMANDS_H
 
+#include <stdbool.h>
+
 // macros here
 
 // global variables here
+typedef bool option;
 
 // structs here
 
@@ -23,6 +26,11 @@
  * @details
  * Display the ARGs, separated by a single space character
  * and followed by a newline, on the standard output.
+ *
+ * Options:
+ * - `-c` - separate arguments with commas
+ * - `-n` - no newline at the end
+ * - `-l` - format output as a list
  */
 int echo(int nargs, char **args);
 
