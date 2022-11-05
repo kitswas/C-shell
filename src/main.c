@@ -73,7 +73,7 @@ int loop()
 		// }
 
 		int status = 0;
-		if (nargs > 0) // ignore empty lines
+		if (nargs > 0 && args[0] != NULL) // ignore empty lines and NULL commands
 			status = execute(nargs, args[0], args);
 
 		free(line);
