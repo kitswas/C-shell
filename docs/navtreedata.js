@@ -24,17 +24,16 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
-    [ "C-shell", "index.html", [
-      [ "Setting up your workspace", "index.html#autotoc_md1", null ],
-      [ "How to run", "index.html#autotoc_md2", null ],
-      [ "Generating Documentation", "index.html#autotoc_md3", null ]
-    ] ],
+  [ "C-Shell", "index.html", [
+    [ "Setting up your workspace", "index.html#autotoc_md1", null ],
+    [ "How to run", "index.html#autotoc_md2", null ],
+    [ "Generating Documentation", "index.html#autotoc_md3", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
+      [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -43,7 +42,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_68267d1309a1af8e8297ef4c3efbcdba.html"
+"dir_3756d50f4003bc63fa3fe49460f9c79d.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

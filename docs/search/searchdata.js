@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "celmpr",
-  1: "mr",
+  0: "ceilmopr",
+  1: "eimr",
   2: "elmpr",
-  3: "clm",
-  4: "c"
+  3: "o",
+  4: "clm",
+  5: "c"
 };
 
 var indexSectionNames =
@@ -12,8 +13,9 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "defines",
-  4: "pages"
+  3: "typedefs",
+  4: "defines",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -21,7 +23,8 @@ var indexSectionLabels =
   0: "All",
   1: "Files",
   2: "Functions",
-  3: "Macros",
-  4: "Pages"
+  3: "Typedefs",
+  4: "Macros",
+  5: "Pages"
 };
 
