@@ -53,14 +53,14 @@ int loop()
 		size_t line_size = LINE_BUFFER_SIZE;
 		char *line = malloc(line_size * sizeof(*line));
 		read_line(line, line_size);
-		printf("You entered: %s\n", line); // debuggging only
+		// printf("You entered: %s\n", line); // debuggging only
 
 		int nargs = 0;
 		char **args = parse_line(line, line_size, &nargs);
-		for (size_t i = 0; i < nargs; i++) // debuggging only
-		{
-			printf("You entered: %s\n", args[i]);
-		}
+		// for (size_t i = 0; i < nargs; i++) // debuggging only
+		// {
+		// 	printf("You entered: %s\n", args[i]);
+		// }
 
 		int status = 0;
 		if (nargs > 0) // ignore empty lines
