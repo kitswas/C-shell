@@ -1,5 +1,5 @@
 /**
- * @file main.c
+ * @file main.h
  * @brief This header file contains almost everything needed for this project
  * @author Swastik Pal
  * @version 0.1
