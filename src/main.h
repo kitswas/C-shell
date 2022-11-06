@@ -10,7 +10,8 @@
 #define MAIN_H
 
 // macros here
-#define cls printf("\033[2J\033[1;1H"); // Clears the screen on both Windows 10 and Linux. Doesn't work on old Windows OSes
+
+#define cls printf("\033[2J\033[1;1H"); // Clears the screen. Requires support for ANSI escape sequences.
 #define LINE_BUFFER_SIZE 1024
 #define MAXHOSTNAMELEN 32
 #define C_SHELL_TOK_DELIM " \t\r\n"

@@ -1,13 +1,11 @@
 /**
  * @file main.c
- * @brief Just trying out this setup
+ * @brief The entrypoint to the program.
  * @author Swastik Pal
  * @version 0.1
  * @date 2022-11-03
  *
  * @copyright Copyright (c) 2022
- *
- * Comments _must_ be written in [**Markdown**](https://www.markdownguide.org/cheat-sheet/).
  */
 
 #include <stdbool.h>
@@ -44,6 +42,7 @@ int execute(int nargs, char *command, char **args)
 	}
 	else if (!strcasecmp(command, "exit"))
 	{
+		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
 	}
 
