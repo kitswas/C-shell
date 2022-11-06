@@ -84,7 +84,7 @@ int loop()
 
 char **parse_line(char *line, size_t line_size, int *nargs)
 {
-	char **tokens = malloc(line_size * sizeof(tokens));
+	char **tokens = malloc(line_size * sizeof(*tokens));
 	char *token = strtok(line, C_SHELL_TOK_DELIM);
 	int position = 0;
 
@@ -95,6 +95,7 @@ char **parse_line(char *line, size_t line_size, int *nargs)
 		token = strtok(NULL, C_SHELL_TOK_DELIM);
 	} while (token != NULL);
 	*nargs = position;
+	tokens[position] = NULL; // NULL-terminate the list of strings
 
 	return tokens;
 }
