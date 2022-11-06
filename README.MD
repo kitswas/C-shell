@@ -35,6 +35,4 @@ doxygen Doxyfile
 
 The generated documentation can be viewed at [/docs](./docs/index.html).
 
-This repository has automated workflow via Github Actions.  
-Documentation is auto-generated and deployed to [Github Pages](https://kitswas.github.io/CPP_project_template/).  
-Disable Actions on your own copy or delete the [workflows](./.github/workflows) folder if you do not want to be billed. This is **not my responsiblity.**
+This repository also has an automated workflow to generate documentatation via Github Actions.  
