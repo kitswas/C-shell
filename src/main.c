@@ -10,10 +10,12 @@
  * Comments _can_ be written in [**Markdown**](https://www.markdownguide.org/cheat-sheet/).
  */
 
+#include <errno.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/wait.h>
 #include <unistd.h>
 #include "internal_commands.h"
 #include "main.h"
@@ -46,6 +48,33 @@ int execute(int nargs, char *command, char **args)
 	{
 		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		pid_t child_pid = fork();
+		if (child_pid == 0)
+		{
+			errno = 0;
+			if (execvp(command, args))
+				switch (errno)
+				{
+				case 0:
+					// do nothing
+					break;
+				case ENOENT:
+					fprintf(stderr, "Command not found.\n");
+					break;
+				default:
+					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
+					break;
+				}
+		}
+		else
+		{
+			int status = 0;
+			waitpid(child_pid, &status, 0);
+			return status;
+		}
 	}
 
 	return 0;
