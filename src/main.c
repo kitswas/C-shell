@@ -30,6 +30,14 @@ int main()
 	return 0;
 }
 
+int set_colour(enum FgColour fg_colour, enum FgColour bg_colour)
+{
+	printf("\033[%d;%dm", fg_colour, to_colour_bg(bg_colour));
+	// printf("\033[93;40m"); // debugging only, should produce bright yellow on black
+	// printf("\033[33;100m"); // debugging only, should produce yellow on bright black
+	return 0;
+}
+
 int execute(int nargs, char *command, char **args)
 {
 	if (!strcasecmp(command, "cls"))
@@ -51,6 +59,7 @@ int execute(int nargs, char *command, char **args)
 
 int load_settings()
 {
+	set_colour(to_colour_bright(YELLOW), BLACK);
 }
 
 int loop()

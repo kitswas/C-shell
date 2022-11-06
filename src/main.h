@@ -20,6 +20,18 @@
 
 // structs here
 
+enum FgColour
+{
+	BLACK = 30,
+	RED,
+	GREEN,
+	YELLOW,
+	BLUE,
+	MAGENTA,
+	CYAN,
+	WHITE
+};
+
 // functions here
 
 /**
@@ -73,5 +85,11 @@ int print_prompt();
  * @return int The number of characters read.
  */
 int read_line(char *buffer, int buffer_size);
+
+// Gets the background colour code
+inline int to_colour_bg(int colour) { return (colour + 10); }
+
+// Gets the code for the bold version of the colour
+inline int to_colour_bright(int colour) { return (colour + 60); }
 
 #endif
