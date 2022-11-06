@@ -1,2 +1,5 @@
 # The build output directory
 build
+
+# All PDFs
+*.pdf
