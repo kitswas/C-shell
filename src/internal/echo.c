@@ -6,23 +6,27 @@
  * @date 2022-11-05
  */
 
+#include <ctype.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include "../internal_commands.h"
+
+extern int opterr, optind, optopt;
+extern char *optarg;
 
 int echo(int nargs, char **args)
 {
-	int start_at = 1;
-
 	option no_newline = false;
 	option use_comma = false;
 	option as_list = false;
+	opterr = 0;
+	int c;
 
-	// check for options
-	while (start_at < nargs && strlen(args[start_at]) > 1 && args[start_at][0] == '-') // consume options
-	{
-		// we have options
-		switch (args[start_at][1])
+	// deal with the options
+	while ((c = getopt(nargs, args, "ncl")) != -1)
+		switch (c)
 		{
 		case 'n':
 			no_newline = true;
@@ -33,18 +37,26 @@ int echo(int nargs, char **args)
 		case 'l':
 			as_list = true;
 			break;
+		case '?':
+			// if (optopt == 'c')
+			// 	fprintf(stderr, "Option -%c requires an argument.\n", optopt);
+			// else
+			if (isprint(optopt))
+				fprintf(stderr, "Unknown option `-%c'.\n", optopt);
+			else
+				fprintf(stderr, "Unknown option character `\\x%x'.\n", optopt);
+			return 1;
 		default:
-			break;
+			fprintf(stderr, "Aborting in echo...");
+			abort();
 		}
-		start_at++;
-	}
 
-	for (int i = 1; start_at < nargs; start_at++, i++)
+	for (int i = 1; optind < nargs; optind++, i++)
 	{
 		if (as_list)
 			printf("%d. ", i);
-		printf("%s", args[start_at]);
-		if (use_comma && start_at < nargs - 1)
+		printf("%s", args[optind]);
+		if (use_comma && optind < nargs - 1)
 		{
 			printf(",");
 		}
