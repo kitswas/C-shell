@@ -91,12 +91,16 @@ $(document).ready(function(){initNavTree('echo_8c.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">echo.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h_source.html">../internal_commands.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -104,6 +108,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="echo_8c.html#a8e4f9094183dcd57eba3b40fbe2cf3e7">echo</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write arguments to the standard output.  <a href="echo_8c.html#a8e4f9094183dcd57eba3b40fbe2cf3e7">More...</a><br /></td></tr>
 <tr class="separator:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae30f05ee1e2e5652f174a35c7875d25e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="echo_8c.html#ae30f05ee1e2e5652f174a35c7875d25e">opterr</a></td></tr>
+<tr class="separator:ae30f05ee1e2e5652f174a35c7875d25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e1c16213bbee2d5e8cc363309f418c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="echo_8c.html#ad5e1c16213bbee2d5e8cc363309f418c">optind</a></td></tr>
+<tr class="separator:ad5e1c16213bbee2d5e8cc363309f418c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475b8db98445da73e5f62a1ef6324b95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="echo_8c.html#a475b8db98445da73e5f62a1ef6324b95">optopt</a></td></tr>
+<tr class="separator:a475b8db98445da73e5f62a1ef6324b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb50a0eab9fed92fc3bfc7dfa4f2c410"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="echo_8c.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">optarg</a></td></tr>
+<tr class="separator:adb50a0eab9fed92fc3bfc7dfa4f2c410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Swastik Pal </dd></dl>
@@ -143,6 +158,79 @@ Functions</h2></td></tr>
 <li><code>-n</code> - no newline at the end</li>
 <li><code>-l</code> - format output as a list </li>
 </ul>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="adb50a0eab9fed92fc3bfc7dfa4f2c410" name="adb50a0eab9fed92fc3bfc7dfa4f2c410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb50a0eab9fed92fc3bfc7dfa4f2c410">&#9670;&#160;</a></span>optarg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* optarg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae30f05ee1e2e5652f174a35c7875d25e" name="ae30f05ee1e2e5652f174a35c7875d25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30f05ee1e2e5652f174a35c7875d25e">&#9670;&#160;</a></span>opterr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int opterr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5e1c16213bbee2d5e8cc363309f418c" name="ad5e1c16213bbee2d5e8cc363309f418c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e1c16213bbee2d5e8cc363309f418c">&#9670;&#160;</a></span>optind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a475b8db98445da73e5f62a1ef6324b95" name="a475b8db98445da73e5f62a1ef6324b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475b8db98445da73e5f62a1ef6324b95">&#9670;&#160;</a></span>optopt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optopt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
