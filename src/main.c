@@ -68,6 +68,7 @@ int execute(int nargs, char *command, char **args)
 					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
 					break;
 				}
+			exit(EXIT_SUCCESS);
 		}
 		else
 		{
