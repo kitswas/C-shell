@@ -54,9 +54,9 @@ int pwd(int nargs, char **args)
 	}
 	else
 	{
-		char buffer[1024];
-		printf("%s\n", getcwd(buffer, 1024));
-		// free(buffer);
+		char *buffer = NULL;
+		printf("%s\n", getcwd(buffer, 0)); // let GNU handle the memory allocation
+		free(buffer);
 	}
 	return 0;
 }
