@@ -47,8 +47,8 @@ int echo(int nargs, char **args);
  * @brief Print the full filename of the current working directory.
  *
  * @details
- * If no option is specified, -P is assumed. Option `-P` overrides
- * `-L` when both are used together.
+ * If no option is specified, -P is assumed. Option `-L` overrides
+ * `-P` when both are used together.
  *
  * Options:
  * - `-L` - use PWD from environment
