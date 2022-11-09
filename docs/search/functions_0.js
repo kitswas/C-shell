@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['echo_0',['echo',['../echo_8c.html#a8e4f9094183dcd57eba3b40fbe2cf3e7',1,'echo(int nargs, char **args):&#160;echo.c'],['../internal__commands_8h.html#a8e4f9094183dcd57eba3b40fbe2cf3e7',1,'echo(int nargs, char **args):&#160;echo.c']]],
-  ['execute_1',['execute',['../main_8c.html#ada308c0ea28c53627e71ef3a4ef600ef',1,'execute(int nargs, char *command, char **args):&#160;main.c'],['../main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef',1,'execute(int nargs, char *command, char **args):&#160;main.c']]]
+  ['cd_0',['cd',['../cd_8c.html#a4a8669d38accfeb2d504ee6f9c68e382',1,'cd(int nargs, char **args):&#160;cd.c'],['../internal__commands_8h.html#a4a8669d38accfeb2d504ee6f9c68e382',1,'cd(int nargs, char **args):&#160;cd.c']]]
 ];
