@@ -113,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="internal__commands_8h.html#a8e4f9094183dcd57eba3b40fbe2cf3e7">echo</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write arguments to the standard output.  <a href="internal__commands_8h.html#a8e4f9094183dcd57eba3b40fbe2cf3e7">More...</a><br /></td></tr>
 <tr class="separator:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467b6faef32b6d8358839a8c9bf72cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="internal__commands_8h.html#a467b6faef32b6d8358839a8c9bf72cd5">pwd</a> (int nargs, char **args)</td></tr>
+<tr class="memdesc:a467b6faef32b6d8358839a8c9bf72cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the full filename of the current working directory.  <a href="internal__commands_8h.html#a467b6faef32b6d8358839a8c9bf72cd5">More...</a><br /></td></tr>
+<tr class="separator:a467b6faef32b6d8358839a8c9bf72cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This header file contains declarations for the internal commands. </p>
@@ -167,6 +170,41 @@ Functions</h2></td></tr>
 <li><code>-c</code> - separate arguments with commas</li>
 <li><code>-n</code> - no newline at the end</li>
 <li><code>-l</code> - format output as a list </li>
+</ul>
+
+</div>
+</div>
+<a id="a467b6faef32b6d8358839a8c9bf72cd5" name="a467b6faef32b6d8358839a8c9bf72cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467b6faef32b6d8358839a8c9bf72cd5">&#9670;&#160;</a></span>pwd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pwd </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nargs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the full filename of the current working directory. </p>
+<p >If no option is specified, -P is assumed. Option <code>-P</code> overrides <code>-L</code> when both are used together.</p>
+<p >Options:</p><ul>
+<li><code>-L</code> - use PWD from environment</li>
+<li><code>-P</code> - resolves symlinks to get the current working directory. </li>
 </ul>
 
 </div>
