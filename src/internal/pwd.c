@@ -35,9 +35,6 @@ int pwd(int nargs, char **args)
 			use_cwd = true;
 			break;
 		case '?':
-			// if (optopt == 'c')
-			// 	fprintf(stderr, "Option -%c requires an argument.\n", optopt);
-			// else
 			if (isprint(optopt))
 				fprintf(stderr, "Unknown option `-%c'.\n", optopt);
 			else
