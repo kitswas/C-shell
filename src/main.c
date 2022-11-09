@@ -49,6 +49,10 @@ int execute(int nargs, char *command, char **args)
 		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
 	}
+	else if (!strcasecmp(command, "pwd"))
+	{
+		pwd(nargs, args);
+	}
 	else
 	{
 		pid_t child_pid = fork();
