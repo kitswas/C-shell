@@ -21,6 +21,15 @@ typedef bool option;
 // functions here
 
 /**
+ * @brief Change the shell working directory.
+ *
+ * @details
+ * If no path is provided,
+ * changes the current directory to `/`.
+ */
+int cd(int nargs, char **args);
+
+/**
  * @brief Write arguments to the standard output.
  *
  * @details

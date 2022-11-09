@@ -36,7 +36,11 @@ int main()
 
 int execute(int nargs, char *command, char **args)
 {
-	if (!strcasecmp(command, "cls"))
+	if (!strcasecmp(command, "cd"))
+	{
+		cd(nargs, args);
+	}
+	else if (!strcasecmp(command, "cls"))
 	{
 		cls;
 	}
