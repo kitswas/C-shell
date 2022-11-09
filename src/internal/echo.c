@@ -22,7 +22,8 @@ int echo(int nargs, char **args)
 	option use_comma = false;
 	option as_list = false;
 	opterr = 0;
-	int c;
+	optind = 0;
+	int c = -1;
 
 	// deal with the options
 	while ((c = getopt(nargs, args, "ncl")) != -1)
