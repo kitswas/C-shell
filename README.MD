@@ -1,6 +1,6 @@
 # C-shell
 
-A shell written in C.
+A shell written in C. For educational purposes. Warranty NOT included. Use at your own risk.
 
 ## Setting up your workspace
 
