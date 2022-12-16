@@ -46,8 +46,6 @@ int load_settings();
 
 /**
  * @brief I keep looping, looping till the user exits.
- *
- * Implementation incomplete.
  */
 int loop();
 
