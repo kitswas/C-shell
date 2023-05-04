@@ -33,13 +33,16 @@ jobs:
     - name: Install doxygen
       run: |
         sudo apt-get install wget
-        wget https://sourceforge.net/projects/doxygen/files/rel-1.9.5/doxygen-1.9.5.linux.bin.tar.gz
-        tar -xvf doxygen-1.9.5.linux.bin.tar.gz
-        cd doxygen-1.9.5
+        wget https://github.com/doxygen/doxygen/releases/download/Release_1_9_6/doxygen-1.9.6.linux.bin.tar.gz
+        tar -xvf doxygen-1.9.6.linux.bin.tar.gz
+        cd doxygen-1.9.6
         sudo make install
         cd ..
-        rm -rf doxygen-1.9.5
-        rm doxygen-1.9.5.linux.bin.tar.gz
+        rm -rf doxygen-1.9.6
+        rm doxygen-1.9.6.linux.bin.tar.gz
+      
+    - name: Install graphviz
+      run: sudo apt-get install graphviz
       
     - name: Remove existing files
       run: rm -rf docs
