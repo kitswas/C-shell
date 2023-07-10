@@ -25,9 +25,9 @@
 var NAVTREE =
 [
   [ "C-Shell", "index.html", [
-    [ "Setting up your workspace", "index.html#autotoc_md1", null ],
-    [ "How to run", "index.html#autotoc_md2", null ],
-    [ "Generating Documentation", "index.html#autotoc_md3", null ],
+    [ "Setting up your workspace", "index.html#setting-up-your-workspace", null ],
+    [ "How to run", "index.html#how-to-run", null ],
+    [ "Generating Documentation", "index.html#generating-documentation", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
