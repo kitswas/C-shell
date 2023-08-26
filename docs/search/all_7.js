@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['read_5fline_0',['read_line',['../main_8c.html#ab275de200202586e62e0cdb5413f8ff8',1,'read_line(char *buffer, int buffer_size):&#160;main.c'],['../main_8h.html#ab275de200202586e62e0cdb5413f8ff8',1,'read_line(char *buffer, int buffer_size):&#160;main.c']]],
-  ['readme_2emd_1',['README.MD',['../README_8MD.html',1,'']]]
+  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['main_2eh_2',['main.h',['../main_8h.html',1,'']]],
+  ['maxhostnamelen_3',['MAXHOSTNAMELEN',['../main_8h.html#afd80ecbe3170ca4fc85b65cda8659f82',1,'main.h']]]
 ];
