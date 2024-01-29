@@ -1,6 +1,9 @@
 # C-shell
 
-A shell written in C. For educational purposes. Warranty NOT included. Use at your own risk.
+A shell written in C. For educational purposes.
+
+> [!CAUTION]
+> Warranty NOT included. Use at your own risk.
 
 ## Setting up your workspace
 
@@ -10,7 +13,8 @@ VSCode requires [a plugin](https://marketplace.visualstudio.com/items?itemName=E
 
 ## How to run
 
-Requires a POSIX compliant system.
+> [!IMPORTANT]
+> Requires a POSIX compliant system.
 
 This project requires [CMake](https://cmake.org/) to build.
 Your IDE (VSCode or CLion) should automatically detect the CMakeLists.txt file and build the project.
