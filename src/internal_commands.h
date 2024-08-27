@@ -41,6 +41,18 @@ int cd(int nargs, char **args);
 int echo(int nargs, char **args);
 
 /**
+ * @brief List directory contents.
+ *
+ * @details
+ * List information about the FILEs (the current directory by default).
+ *
+ * Options:
+ * - `-a` - do not ignore entries starting with `.`
+ * - `-l` - use a long listing format
+ */
+int ls(int nargs, char **args);
+
+/**
  * @brief Print the full filename of the current working directory.
  *
  * @details

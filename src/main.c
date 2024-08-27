@@ -51,6 +51,10 @@ int execute(int nargs, char *command, char **args)
 		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
 	}
+	else if (!strcasecmp(command, "ls"))
+	{
+		ls(nargs, args);
+	}
 	else if (!strcasecmp(command, "pwd"))
 	{
 		pwd(nargs, args);
