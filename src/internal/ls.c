@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <pwd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -78,6 +79,20 @@ char *get_details(const char *const path)
 
 	char *details;
 
+	char *owner_name = getpwuid(file_stat.st_uid)->pw_name;
+	if (owner_name == NULL)
+	{
+		fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
+		return NULL;
+	}
+
+	char *group_name = getpwuid(file_stat.st_gid)->pw_name;
+	if (group_name == NULL)
+	{
+		fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
+		return NULL;
+	}
+
 	char time_format[] = "%b %d %H:%M";
 	size_t formatted_time_size = 12; // Found by counting the characters in the output of the ls binary
 	char *mtime_str = calloc(formatted_time_size + 1, sizeof(*mtime_str));
@@ -85,10 +100,11 @@ char *get_details(const char *const path)
 	// printf("%s\n", mtime_str); // debugging only
 
 	int n = asprintf(&details,
-					 "%s %ld %d %d %ld %s",
-					 file_mode, file_stat.st_nlink,
-					 file_stat.st_uid,
-					 file_stat.st_gid,
+					 "%s %ld %s %s %ld\t%s",
+					 file_mode,
+					 file_stat.st_nlink,
+					 owner_name,
+					 group_name,
 					 file_stat.st_size,
 					 mtime_str);
 
@@ -118,17 +134,22 @@ int print_dir_entries(const char *const path, bool show_hidden, bool show_detail
 			if (show_details)
 			{
 				char *full_path;
-				asprintf(&full_path, "%s/%s", path, entry->d_name);
+				if (asprintf(&full_path, "%s/%s", path, entry->d_name) < 0)
+				{
+					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
+					return -1;
+				}
 				char *details = get_details(full_path);
 				printf("%s %s\n", details, entry->d_name);
 				free(details);
 			}
 			else
 			{
-				printf("%s\n", entry->d_name);
+				printf("%s\t", entry->d_name);
 			}
 		}
 	}
+	printf("\n");
 
 	closedir(dir);
 	return 0;
