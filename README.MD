@@ -23,8 +23,8 @@ If you are using the command line, you can run the following commands:
 
 ```bash
 cmake -B build
-cmake --build build --config Debug
-./build/executable
+cmake --build build --config Release
+./build/cshell
 ```
 
 ## Generating Documentation
