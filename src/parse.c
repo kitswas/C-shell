@@ -19,3 +19,21 @@ char **parse_command(char *command, size_t command_size, int *nargs)
 
 	return tokens;
 }
+
+char **parse_line(char *line, size_t line_size, int *ncmds)
+{
+	char **commands = malloc(line_size * sizeof(*commands));
+	char *command = strtok(line, COMMAND_DELIM);
+	int position = 0;
+
+	do
+	{
+		commands[position] = command;
+		++position;
+		command = strtok(NULL, COMMAND_DELIM);
+	} while (command != NULL);
+	*ncmds = position;
+	commands[position] = NULL; // NULL-terminate the list of strings
+
+	return commands;
+}

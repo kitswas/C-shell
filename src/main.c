@@ -105,19 +105,29 @@ int loop()
 		read_line(line, line_size);
 		// printf("You entered: %s\n", line); // debuggging only
 
-		int nargs = 0;
-		char **args = parse_command(line, line_size, &nargs);
-		// for (size_t i = 0; i < nargs; i++) // debuggging only
-		// {
-		// 	printf("You entered: %s\n", args[i]);
-		// }
+		int ncmds = 0;
+		char **commands = parse_line(line, line_size, &ncmds);
 
-		int status = 0;
-		if (nargs > 0 && args[0] != NULL) // ignore empty lines and NULL commands
-			status = execute(nargs, args[0], args);
+		for (size_t nc = 0; nc < ncmds; ++nc)
+		{
+			char *command = commands[nc];
+			int nargs = 0;
+			char **args = parse_command(command, strlen(command), &nargs);
+
+			// printf("Command %ld: %s\n", nc, command); // debuggging only
+			// for (size_t i = 0; i < nargs; i++)		  // debuggging only
+			// {
+			// 	printf("Arg %ld: %s\n", i, args[i]);
+			// }
+
+			int status = 0;
+			if (nargs > 0 && args[0] != NULL) // ignore empty lines and NULL commands
+				status = execute(nargs, args[0], args);
+
+			free(args);
+		}
 
 		free(line);
-		free(args);
 	}
 }
 
