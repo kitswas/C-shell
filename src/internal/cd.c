@@ -1,11 +1,3 @@
-/**
- * @file cd.c
- * @author Swastik Pal
- * @brief
- * @version 0.1
- * @date 2022-11-09
- */
-
 #include <ctype.h>
 #include <errno.h>
 #include <stdlib.h>

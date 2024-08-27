@@ -1,11 +1,3 @@
-/**
- * @file echo.c
- * @author Swastik Pal
- * @brief
- * @version 0.1
- * @date 2022-11-05
- */
-
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>

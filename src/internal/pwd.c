@@ -1,11 +1,3 @@
-/**
- * @file pwd.c
- * @author Swastik Pal
- * @brief
- * @version 0.1
- * @date 2022-11-07
- */
-
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>

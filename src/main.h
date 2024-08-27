@@ -1,11 +1,3 @@
-/**
- * @file main.h
- * @brief This header file contains almost everything needed for this project
- * @author Swastik Pal
- * @version 0.1
- * @date 2022-11-03
- */
-
 #ifndef MAIN_H
 #define MAIN_H
 
