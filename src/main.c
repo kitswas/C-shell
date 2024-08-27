@@ -105,7 +105,7 @@ int loop()
 		// printf("You entered: %s\n", line); // debuggging only
 
 		int nargs = 0;
-		char **args = parse_line(line, line_size, &nargs);
+		char **args = parse_command(line, line_size, &nargs);
 		// for (size_t i = 0; i < nargs; i++) // debuggging only
 		// {
 		// 	printf("You entered: %s\n", args[i]);
@@ -120,10 +120,10 @@ int loop()
 	}
 }
 
-char **parse_line(char *line, size_t line_size, int *nargs)
+char **parse_command(char *command, size_t command_size, int *nargs)
 {
-	char **tokens = malloc(line_size * sizeof(*tokens));
-	char *token = strtok(line, C_SHELL_TOK_DELIM);
+	char **tokens = malloc(command_size * sizeof(*tokens));
+	char *token = strtok(command, C_SHELL_TOK_DELIM);
 	int position = 0;
 
 	do

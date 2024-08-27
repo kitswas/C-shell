@@ -50,13 +50,13 @@ int load_settings();
 int loop();
 
 /**
- * @brief Tokenizes the line.
+ * @brief Tokenizes the command.
  *
  * @param line A string.
  * @param line_size Length of the string.
  * @return char** An array of tokens.
  */
-char **parse_line(char *line, size_t line_size, int *nargs);
+char **parse_command(char *command, size_t command_size, int *nargs);
 
 /**
  * @brief Prints `username\@machinename\:path>`.
