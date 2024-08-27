@@ -14,7 +14,6 @@
 #define cls printf("\033[2J\033[1;1H"); // Clears the screen. Requires support for ANSI escape sequences.
 #define LINE_BUFFER_SIZE 1024
 #define MAXHOSTNAMELEN 32
-#define C_SHELL_TOK_DELIM " \t\r\n"
 
 // global variables here
 
@@ -48,15 +47,6 @@ int load_settings();
  * @brief I keep looping, looping till the user exits.
  */
 int loop();
-
-/**
- * @brief Tokenizes the command.
- *
- * @param line A string.
- * @param line_size Length of the string.
- * @return char** An array of tokens.
- */
-char **parse_command(char *command, size_t command_size, int *nargs);
 
 /**
  * @brief Prints `username\@machinename\:path>`.
