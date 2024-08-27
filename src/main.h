@@ -3,7 +3,8 @@
 
 // macros here
 
-#define cls printf("\033[2J\033[1;1H"); // Clears the screen. Requires support for ANSI escape sequences.
+/** Clears the screen. Requires terminal support for ANSI escape sequences. */
+#define cls printf("\033[2J\033[1;1H");
 #define LINE_BUFFER_SIZE 1024
 #define MAXHOSTNAMELEN 32
 
@@ -41,7 +42,7 @@ int load_settings();
 int loop();
 
 /**
- * @brief Prints `username\@machinename\:path>`.
+ * @brief Prints `username@machinename:path>`.
  */
 int print_prompt();
 
