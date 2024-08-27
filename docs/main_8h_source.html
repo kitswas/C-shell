@@ -120,42 +120,37 @@ $(function(){initNavTree('main_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">main.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef MAIN_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define MAIN_H</span></div>
+<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MAIN_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MAIN_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// macros here</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="main_8h.html#aaece7c73045f420fc5eda905e2861b70">    6</a></span><span class="preprocessor">#define cls printf(&quot;\033[2J\033[1;1H&quot;); </span><span class="comment">// Clears the screen. Requires support for ANSI escape sequences.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="main_8h.html#afa0499dcb85922b683da3918f512adb6">    7</a></span><span class="preprocessor">#define LINE_BUFFER_SIZE 1024</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="main_8h.html#afd80ecbe3170ca4fc85b65cda8659f82">    8</a></span><span class="preprocessor">#define MAXHOSTNAMELEN 32</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// global variables here</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// macros here</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// structs here</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="main_8h.html#aaece7c73045f420fc5eda905e2861b70">   14</a></span><span class="preprocessor">#define cls printf(&quot;\033[2J\033[1;1H&quot;); </span><span class="comment">// Clears the screen. Requires support for ANSI escape sequences.</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="main_8h.html#afa0499dcb85922b683da3918f512adb6">   15</a></span><span class="preprocessor">#define LINE_BUFFER_SIZE 1024</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="main_8h.html#afd80ecbe3170ca4fc85b65cda8659f82">   16</a></span><span class="preprocessor">#define MAXHOSTNAMELEN 32</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="main_8h.html#a5265362483710299690afd28141ccc09">   17</a></span><span class="preprocessor">#define C_SHELL_TOK_DELIM &quot; \t\r\n&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// global variables here</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// structs here</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// functions here</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef">execute</a>(<span class="keywordtype">int</span> nargs, <span class="keywordtype">char</span> *command, <span class="keywordtype">char</span> **args);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a>();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#abc3e3d6009223609dc366720373a7d94">loop</a>();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">char</span> **<a class="code hl_function" href="main_8h.html#ae7423290ea652e0d8f1eeba75606df89">parse_line</a>(<span class="keywordtype">char</span> *line, <span class="keywordtype">size_t</span> line_size, <span class="keywordtype">int</span> *nargs);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ab275de200202586e62e0cdb5413f8ff8">read_line</a>(<span class="keywordtype">char</span> *buffer, <span class="keywordtype">int</span> buffer_size);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="amain_8h_html_a599d4f40a5e145d7a701ec49b73426a6"><div class="ttname"><a href="main_8h.html#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a></div><div class="ttdeci">int print_prompt()</div><div class="ttdoc">Prints username@machinename.</div><div class="ttdef"><b>Definition</b> main.c:141</div></div>
-<div class="ttc" id="amain_8h_html_ab275de200202586e62e0cdb5413f8ff8"><div class="ttname"><a href="main_8h.html#ab275de200202586e62e0cdb5413f8ff8">read_line</a></div><div class="ttdeci">int read_line(char *buffer, int buffer_size)</div><div class="ttdoc">Reads a line from stdin.</div><div class="ttdef"><b>Definition</b> main.c:148</div></div>
-<div class="ttc" id="amain_8h_html_abc3e3d6009223609dc366720373a7d94"><div class="ttname"><a href="main_8h.html#abc3e3d6009223609dc366720373a7d94">loop</a></div><div class="ttdeci">int loop()</div><div class="ttdoc">I keep looping, looping till the user exits.</div><div class="ttdef"><b>Definition</b> main.c:96</div></div>
-<div class="ttc" id="amain_8h_html_ad074a0780bf1da0e5d495a0b54c754a4"><div class="ttname"><a href="main_8h.html#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a></div><div class="ttdeci">int load_settings()</div><div class="ttdoc">Will load configuration file(s).</div><div class="ttdef"><b>Definition</b> main.c:92</div></div>
-<div class="ttc" id="amain_8h_html_ada308c0ea28c53627e71ef3a4ef600ef"><div class="ttname"><a href="main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef">execute</a></div><div class="ttdeci">int execute(int nargs, char *command, char **args)</div><div class="ttdoc">Executes the command.</div><div class="ttdef"><b>Definition</b> main.c:37</div></div>
-<div class="ttc" id="amain_8h_html_ae7423290ea652e0d8f1eeba75606df89"><div class="ttname"><a href="main_8h.html#ae7423290ea652e0d8f1eeba75606df89">parse_line</a></div><div class="ttdeci">char ** parse_line(char *line, size_t line_size, int *nargs)</div><div class="ttdoc">Tokenizes the line.</div><div class="ttdef"><b>Definition</b> main.c:123</div></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// functions here</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef">execute</a>(<span class="keywordtype">int</span> nargs, <span class="keywordtype">char</span> *command, <span class="keywordtype">char</span> **args);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#abc3e3d6009223609dc366720373a7d94">loop</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8h.html#ab275de200202586e62e0cdb5413f8ff8">read_line</a>(<span class="keywordtype">char</span> *buffer, <span class="keywordtype">int</span> buffer_size);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amain_8h_html_a599d4f40a5e145d7a701ec49b73426a6"><div class="ttname"><a href="main_8h.html#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a></div><div class="ttdeci">int print_prompt()</div><div class="ttdoc">Prints username\@machinename\:path&gt;.</div><div class="ttdef"><b>Definition</b> main.c:131</div></div>
+<div class="ttc" id="amain_8h_html_ab275de200202586e62e0cdb5413f8ff8"><div class="ttname"><a href="main_8h.html#ab275de200202586e62e0cdb5413f8ff8">read_line</a></div><div class="ttdeci">int read_line(char *buffer, int buffer_size)</div><div class="ttdoc">Reads a line from stdin.</div><div class="ttdef"><b>Definition</b> main.c:139</div></div>
+<div class="ttc" id="amain_8h_html_abc3e3d6009223609dc366720373a7d94"><div class="ttname"><a href="main_8h.html#abc3e3d6009223609dc366720373a7d94">loop</a></div><div class="ttdeci">int loop()</div><div class="ttdoc">I keep looping, looping till the user exits.</div><div class="ttdef"><b>Definition</b> main.c:94</div></div>
+<div class="ttc" id="amain_8h_html_ad074a0780bf1da0e5d495a0b54c754a4"><div class="ttname"><a href="main_8h.html#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a></div><div class="ttdeci">int load_settings()</div><div class="ttdoc">Will load configuration file(s).</div><div class="ttdef"><b>Definition</b> main.c:90</div></div>
+<div class="ttc" id="amain_8h_html_ada308c0ea28c53627e71ef3a4ef600ef"><div class="ttname"><a href="main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef">execute</a></div><div class="ttdeci">int execute(int nargs, char *command, char **args)</div><div class="ttdoc">Executes the command.</div><div class="ttdef"><b>Definition</b> main.c:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

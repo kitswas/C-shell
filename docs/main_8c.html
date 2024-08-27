@@ -134,6 +134,7 @@ $(function(){initNavTree('main_8c.html',''); initResizable(true); });
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h_source.html">internal_commands.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parse_8h_source.html">parse.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -149,11 +150,8 @@ Functions</h2></td></tr>
 <tr class="memitem:abc3e3d6009223609dc366720373a7d94" id="r_abc3e3d6009223609dc366720373a7d94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3e3d6009223609dc366720373a7d94">loop</a> ()</td></tr>
 <tr class="memdesc:abc3e3d6009223609dc366720373a7d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">I keep looping, looping till the user exits.  <br /></td></tr>
 <tr class="separator:abc3e3d6009223609dc366720373a7d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7423290ea652e0d8f1eeba75606df89" id="r_ae7423290ea652e0d8f1eeba75606df89"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7423290ea652e0d8f1eeba75606df89">parse_line</a> (char *line, size_t line_size, int *nargs)</td></tr>
-<tr class="memdesc:ae7423290ea652e0d8f1eeba75606df89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes the line.  <br /></td></tr>
-<tr class="separator:ae7423290ea652e0d8f1eeba75606df89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599d4f40a5e145d7a701ec49b73426a6" id="r_a599d4f40a5e145d7a701ec49b73426a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a> ()</td></tr>
-<tr class="memdesc:a599d4f40a5e145d7a701ec49b73426a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints username@machinename.  <br /></td></tr>
+<tr class="memdesc:a599d4f40a5e145d7a701ec49b73426a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints <code>username\@machinename\:path&gt;</code>.  <br /></td></tr>
 <tr class="separator:a599d4f40a5e145d7a701ec49b73426a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab275de200202586e62e0cdb5413f8ff8" id="r_ab275de200202586e62e0cdb5413f8ff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab275de200202586e62e0cdb5413f8ff8">read_line</a> (char *buffer, int buffer_size)</td></tr>
 <tr class="memdesc:ab275de200202586e62e0cdb5413f8ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
@@ -162,10 +160,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The entrypoint to the program. </p>
 <dl class="section author"><dt>Author</dt><dd>Swastik Pal </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-11-03</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022</dd></dl>
-<p>Comments <em>can</em> be written in <a href="https://www.markdownguide.org/cheat-sheet/"><b>Markdown</b></a>. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ada308c0ea28c53627e71ef3a4ef600ef" name="ada308c0ea28c53627e71ef3a4ef600ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada308c0ea28c53627e71ef3a4ef600ef">&#9670;&#160;</a></span>execute()</h2>
@@ -266,42 +262,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae7423290ea652e0d8f1eeba75606df89" name="ae7423290ea652e0d8f1eeba75606df89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7423290ea652e0d8f1eeba75606df89">&#9670;&#160;</a></span>parse_line()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char ** parse_line </td>
-          <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>line_size</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Tokenizes the line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">line</td><td>A string. </td></tr>
-    <tr><td class="paramname">line_size</td><td>Length of the string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>char** An array of tokens. </dd></dl>
-
-</div>
-</div>
 <a id="a599d4f40a5e145d7a701ec49b73426a6" name="a599d4f40a5e145d7a701ec49b73426a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a599d4f40a5e145d7a701ec49b73426a6">&#9670;&#160;</a></span>print_prompt()</h2>
 
@@ -317,7 +277,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prints username@machinename. </p>
+<p>Prints <code>username\@machinename\:path&gt;</code>. </p>
 
 </div>
 </div>
