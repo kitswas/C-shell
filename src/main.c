@@ -142,7 +142,8 @@ int print_prompt()
 {
 	char hostname[MAXHOSTNAMELEN];
 	gethostname(hostname, MAXHOSTNAMELEN);
-	printf("%s@%s$ ", getenv("USER"), hostname);
+	char *current_dir = getcwd(NULL, 0);
+	printf("%s@%s:%s> ", getenv("USER"), hostname, current_dir);
 }
 
 int read_line(char *buffer, int buffer_size)

@@ -59,7 +59,7 @@ int loop();
 char **parse_line(char *line, size_t line_size, int *nargs);
 
 /**
- * @brief Prints username\@machinename.
+ * @brief Prints `username\@machinename\:path>`.
  */
 int print_prompt();
 
