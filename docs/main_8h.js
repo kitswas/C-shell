@@ -7,5 +7,5 @@ var main_8h =
     [ "load_settings", "main_8h.html#ad074a0780bf1da0e5d495a0b54c754a4", null ],
     [ "loop", "main_8h.html#abc3e3d6009223609dc366720373a7d94", null ],
     [ "print_prompt", "main_8h.html#a599d4f40a5e145d7a701ec49b73426a6", null ],
-    [ "read_line", "main_8h.html#ab275de200202586e62e0cdb5413f8ff8", null ]
+    [ "read_line", "main_8h.html#acdc51cd121c86fe5a560f1f54f71a64d", null ]
 ];

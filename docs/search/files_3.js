@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ls_2ec_0',['ls.c',['../ls_8c.html',1,'']]]
+  ['internal_5fcommands_2eh_0',['internal_commands.h',['../internal__commands_8h.html',1,'']]]
 ];

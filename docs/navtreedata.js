@@ -28,6 +28,14 @@ var NAVTREE =
     [ "Setting up your workspace", "index.html#setting-up-your-workspace", null ],
     [ "How to run", "index.html#how-to-run", null ],
     [ "Generating Documentation", "index.html#generating-documentation", null ],
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Structure Index", "classes.html", null ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
@@ -43,7 +51,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"cd_8c.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

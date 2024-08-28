@@ -141,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8e4f9094183dcd57eba3b40fbe2cf3e7" id="r_a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4f9094183dcd57eba3b40fbe2cf3e7">echo</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write arguments to the standard output.  <br /></td></tr>
 <tr class="separator:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a392c5830ddbe5bbf88eee7daf86bd" id="r_ad0a392c5830ddbe5bbf88eee7daf86bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0a392c5830ddbe5bbf88eee7daf86bd">history</a> (int nargs, char **args)</td></tr>
+<tr class="memdesc:ad0a392c5830ddbe5bbf88eee7daf86bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the history of commands.  <br /></td></tr>
+<tr class="separator:ad0a392c5830ddbe5bbf88eee7daf86bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59122268cd82126fb38c86a60c3df9cb" id="r_a59122268cd82126fb38c86a60c3df9cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59122268cd82126fb38c86a60c3df9cb">ls</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a59122268cd82126fb38c86a60c3df9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">List directory contents.  <br /></td></tr>
 <tr class="separator:a59122268cd82126fb38c86a60c3df9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +218,35 @@ Functions</h2></td></tr>
 <li><code>-c</code> - separate arguments with commas</li>
 <li><code>-n</code> - no newline at the end</li>
 <li><code>-l</code> - format output as a list </li>
+</ul>
+
+</div>
+</div>
+<a id="ad0a392c5830ddbe5bbf88eee7daf86bd" name="ad0a392c5830ddbe5bbf88eee7daf86bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a392c5830ddbe5bbf88eee7daf86bd">&#9670;&#160;</a></span>history()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int history </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the history of commands. </p>
+<p>If no option is specified, prints the last 5 commands.</p>
+<p>Options:</p><ul>
+<li><code>-c</code> - clear the history</li>
+<li><code>-r</code> - read the history file and write to the history list</li>
+<li><code>-w</code> - write the history list to the history file </li>
 </ul>
 
 </div>

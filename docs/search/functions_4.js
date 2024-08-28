@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]]
+  ['history_0',['history',['../history_8c.html#ad0a392c5830ddbe5bbf88eee7daf86bd',1,'history(int nargs, char **args):&#160;history.c'],['../internal__commands_8h.html#ad0a392c5830ddbe5bbf88eee7daf86bd',1,'history(int nargs, char **args):&#160;history.c']]]
 ];

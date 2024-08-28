@@ -14,6 +14,12 @@
     <loc>https://kitswas.github.io/C-shell/echo_8c.html</loc>
   </url>
   <url>
+    <loc>https://kitswas.github.io/C-shell/history_8c.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/history_8h.html</loc>
+  </url>
+  <url>
     <loc>https://kitswas.github.io/C-shell/ls_8c.html</loc>
   </url>
   <url>
@@ -35,6 +41,9 @@
     <loc>https://kitswas.github.io/C-shell/parse_8h.html</loc>
   </url>
   <url>
+    <loc>https://kitswas.github.io/C-shell/structhistory__list.html</loc>
+  </url>
+  <url>
     <loc>https://kitswas.github.io/C-shell/dir_3756d50f4003bc63fa3fe49460f9c79d.html</loc>
   </url>
   <url>
@@ -45,6 +54,24 @@
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/doxygen_crawl.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/annotated.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/classes.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/functions.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/functions.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/functions_vars.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/functions_vars.html</loc>
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/files.html</loc>
@@ -74,6 +101,27 @@
     <loc>https://kitswas.github.io/C-shell/globals.html</loc>
   </url>
   <url>
+    <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>
+  </url>
+  <url>
     <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>
   </url>
   <url>
@@ -98,7 +146,13 @@
     <loc>https://kitswas.github.io/C-shell/globals_vars.html</loc>
   </url>
   <url>
+    <loc>https://kitswas.github.io/C-shell/globals_vars.html</loc>
+  </url>
+  <url>
     <loc>https://kitswas.github.io/C-shell/globals_type.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals_defs.html</loc>
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/globals_defs.html</loc>

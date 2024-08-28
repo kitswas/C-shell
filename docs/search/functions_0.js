@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cd_0',['cd',['../cd_8c.html#a4a8669d38accfeb2d504ee6f9c68e382',1,'cd(int nargs, char **args):&#160;cd.c'],['../internal__commands_8h.html#a4a8669d38accfeb2d504ee6f9c68e382',1,'cd(int nargs, char **args):&#160;cd.c']]]
+  ['add_5fto_5fhistory_0',['add_to_history',['../history_8c.html#a0e785b5c430c0e275c9c0616fb227003',1,'add_to_history(char *line):&#160;history.c'],['../history_8h.html#a0e785b5c430c0e275c9c0616fb227003',1,'add_to_history(char *line):&#160;history.c']]]
 ];

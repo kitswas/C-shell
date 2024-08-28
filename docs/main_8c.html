@@ -133,6 +133,7 @@ $(function(){initNavTree('main_8c.html',''); initResizable(true); });
 <code>#include &lt;sys/wait.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h.html">internal_commands.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="history_8h.html">internal/history.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="parse_8h.html">parse.h</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -153,9 +154,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a599d4f40a5e145d7a701ec49b73426a6" id="r_a599d4f40a5e145d7a701ec49b73426a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a> ()</td></tr>
 <tr class="memdesc:a599d4f40a5e145d7a701ec49b73426a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints <code>username@machinename:path&gt;</code>.  <br /></td></tr>
 <tr class="separator:a599d4f40a5e145d7a701ec49b73426a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab275de200202586e62e0cdb5413f8ff8" id="r_ab275de200202586e62e0cdb5413f8ff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab275de200202586e62e0cdb5413f8ff8">read_line</a> (char *buffer, int buffer_size)</td></tr>
-<tr class="memdesc:ab275de200202586e62e0cdb5413f8ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
-<tr class="separator:ab275de200202586e62e0cdb5413f8ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdc51cd121c86fe5a560f1f54f71a64d" id="r_acdc51cd121c86fe5a560f1f54f71a64d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc51cd121c86fe5a560f1f54f71a64d">read_line</a> (char *buffer, size_t buffer_size)</td></tr>
+<tr class="memdesc:acdc51cd121c86fe5a560f1f54f71a64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
+<tr class="separator:acdc51cd121c86fe5a560f1f54f71a64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The entrypoint to the program. </p>
@@ -196,7 +197,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The exit status of the command.</dd></dl>
 <p>Available commands:</p><ul>
 <li>cls - clears the screen</li>
 <li>exit - terminates the terminal </li>
@@ -278,24 +279,25 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints <code>username@machinename:path&gt;</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of characters printed. </dd></dl>
 
 </div>
 </div>
-<a id="ab275de200202586e62e0cdb5413f8ff8" name="ab275de200202586e62e0cdb5413f8ff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab275de200202586e62e0cdb5413f8ff8">&#9670;&#160;</a></span>read_line()</h2>
+<a id="acdc51cd121c86fe5a560f1f54f71a64d" name="acdc51cd121c86fe5a560f1f54f71a64d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdc51cd121c86fe5a560f1f54f71a64d">&#9670;&#160;</a></span>read_line()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int read_line </td>
+          <td class="memname">size_t read_line </td>
           <td>(</td>
           <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -308,7 +310,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int The number of characters read. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of characters read. </dd></dl>
 
 </div>
 </div>

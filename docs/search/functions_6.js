@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5fline_0',['read_line',['../main_8c.html#ab275de200202586e62e0cdb5413f8ff8',1,'read_line(char *buffer, int buffer_size):&#160;main.c'],['../main_8h.html#ab275de200202586e62e0cdb5413f8ff8',1,'read_line(char *buffer, int buffer_size):&#160;main.c']]]
+  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]]
 ];
