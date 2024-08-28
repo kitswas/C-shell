@@ -20,7 +20,7 @@
  * @param command A string.
  * @param command_size Length of the string.
  * @param nargs Stores the number of arguments.
- * @return char** An array of tokens.
+ * @return An array of tokens.
  */
 char **parse_command(char *command, size_t command_size, int *nargs);
 
@@ -30,7 +30,7 @@ char **parse_command(char *command, size_t command_size, int *nargs);
  * @param line A string.
  * @param line_size Length of the string.
  * @param ncmds Stores the number of commands.
- * @return char** An array of commands.
+ * @return An array of commands.
  */
 char **parse_line(char *line, size_t line_size, int *ncmds);
 

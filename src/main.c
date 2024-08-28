@@ -93,6 +93,8 @@ int execute(int nargs, char *command, char **args)
 
 int load_settings()
 {
+	// not yet implemented
+	return 0;
 }
 
 int loop()
@@ -109,7 +111,7 @@ int loop()
 		int ncmds = 0;
 		char **commands = parse_line(line, line_size, &ncmds);
 
-		for (size_t nc = 0; nc < ncmds; ++nc)
+		for (int nc = 0; nc < ncmds; ++nc)
 		{
 			char *command = commands[nc];
 			int nargs = 0;
@@ -125,6 +127,11 @@ int loop()
 			if (nargs > 0 && args[0] != NULL) // ignore empty lines and NULL commands
 				status = execute(nargs, args[0], args);
 
+			if (status != 0)
+			{
+				fprintf(stderr, "Command exit with status %d\n", status);
+			}
+
 			free(args);
 		}
 
@@ -137,17 +144,17 @@ int print_prompt()
 	char hostname[MAXHOSTNAMELEN];
 	gethostname(hostname, MAXHOSTNAMELEN);
 	char *current_dir = getcwd(NULL, 0);
-	printf("%s@%s:%s> ", getenv("USER"), hostname, current_dir);
+	return printf("%s@%s:%s> ", getenv("USER"), hostname, current_dir);
 }
 
-int read_line(char *buffer, int buffer_size)
+size_t read_line(char *buffer, size_t buffer_size)
 {
 	int ch = 0;
-	int i = 0;
+	size_t i = 0;
 	do
 	{
 		ch = getchar();
-		buffer[i] = ch;
+		buffer[i] = (char)ch;
 		++i;
 	} while (ch != '\n' && ch != EOF && i < buffer_size);
 	buffer[i - 1] = '\0';			// null terminate the string

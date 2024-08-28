@@ -20,7 +20,7 @@
  * @param nargs Number of arguments to the command.
  * @param command The command to execute.
  * @param args The list of arguments to the command.
- * @return int
+ * @return The exit status of the command.
  *
  * @details
  * Available commands:
@@ -43,6 +43,7 @@ int loop();
 
 /**
  * @brief Prints `username@machinename:path>`.
+ * @return The number of characters printed.
  */
 int print_prompt();
 
@@ -51,8 +52,8 @@ int print_prompt();
  *
  * @param buffer The buffer to write into.
  * @param buffer_size The size of the provided buffer.
- * @return int The number of characters read.
+ * @return The number of characters read.
  */
-int read_line(char *buffer, int buffer_size);
+size_t read_line(char *buffer, size_t buffer_size);
 
 #endif

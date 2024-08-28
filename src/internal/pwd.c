@@ -11,7 +11,6 @@ extern char *optarg;
 int pwd(int nargs, char **args)
 {
 	option use_env_pwd = false;
-	option use_cwd = true;
 	opterr = 0;
 	optind = 0;
 	int c = -1;
@@ -24,7 +23,7 @@ int pwd(int nargs, char **args)
 			use_env_pwd = true;
 			break;
 		case 'P':
-			use_cwd = true;
+			// this is no different from the default behavior
 			break;
 		case '?':
 			if (isprint(optopt))

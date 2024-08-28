@@ -184,7 +184,7 @@ int ls(int nargs, char **args)
 	errno = 0;
 	if (optind < nargs)
 	{
-		for (size_t i = optind; i < nargs; ++i)
+		for (int i = optind; i < nargs; ++i)
 		{
 			print_dir_entries(args[optind], show_hidden, show_details);
 		}
