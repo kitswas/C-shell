@@ -3,8 +3,6 @@
 
 // macros here
 
-/** Clears the screen. Requires terminal support for ANSI escape sequences. */
-#define cls printf("\033[2J\033[1;1H");
 #define LINE_BUFFER_SIZE 1024
 #define MAXHOSTNAMELEN 32
 
@@ -46,14 +44,5 @@ int loop();
  * @return The number of characters printed.
  */
 int print_prompt();
-
-/**
- * @brief Reads a line from stdin.
- *
- * @param buffer The buffer to write into.
- * @param buffer_size The size of the provided buffer.
- * @return The number of characters read.
- */
-size_t read_line(char *buffer, size_t buffer_size);
 
 #endif

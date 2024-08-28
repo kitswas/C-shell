@@ -18,6 +18,7 @@
 #include "internal/history.h"
 #include "main.h"
 #include "parse.h"
+#include "terminal.h"
 
 /**
  * @brief Execution starts here
@@ -157,20 +158,4 @@ int print_prompt()
 	gethostname(hostname, MAXHOSTNAMELEN);
 	char *current_dir = getcwd(NULL, 0);
 	return printf("%s@%s:%s> ", getenv("USER"), hostname, current_dir);
-}
-
-size_t read_line(char *buffer, size_t buffer_size)
-{
-	int ch = 0;
-	size_t i = 0;
-	do
-	{
-		ch = getchar();
-		buffer[i] = (char)ch;
-		++i;
-	} while (ch != '\n' && ch != EOF && i < buffer_size);
-	buffer[i - 1] = '\0';			// null terminate the string
-	while (ch != '\n' && ch != EOF) // discard the rest of the input line
-		ch = getchar();
-	return i;
 }

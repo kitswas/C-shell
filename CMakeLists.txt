@@ -11,6 +11,7 @@ set(SOURCES
 	src/internal/ls.c
 	src/internal/pwd.c
 	src/parse.c
+	src/terminal.c
 )
 
 # Some compiler flags for GCC and Clang, disable if unwanted
