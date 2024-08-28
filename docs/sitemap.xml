@@ -5,15 +5,6 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://kitswas.github.io/C-shell/internal__commands_8h_source.html</loc>
-  </url>
-  <url>
-    <loc>https://kitswas.github.io/C-shell/main_8h_source.html</loc>
-  </url>
-  <url>
-    <loc>https://kitswas.github.io/C-shell/parse_8h_source.html</loc>
-  </url>
-  <url>
     <loc>https://kitswas.github.io/C-shell/README_8MD.html</loc>
   </url>
   <url>
@@ -21,6 +12,9 @@
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/echo_8c.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/ls_8c.html</loc>
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/pwd_8c.html</loc>
@@ -75,6 +69,12 @@
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals.html</loc>
+  </url>
+  <url>
+    <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>
   </url>
   <url>
     <loc>https://kitswas.github.io/C-shell/globals_func.html</loc>

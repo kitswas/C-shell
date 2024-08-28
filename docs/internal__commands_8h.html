@@ -127,9 +127,7 @@ $(function(){initNavTree('internal__commands_8h.html',''); initResizable(true); 
 <p>This header file contains declarations for the internal commands.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
-</div>
-<p><a href="internal__commands_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab8212c049089216f0198963383b62761" id="r_ab8212c049089216f0198963383b62761"><td class="memItemLeft" align="right" valign="top">typedef bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8212c049089216f0198963383b62761">option</a></td></tr>
@@ -143,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8e4f9094183dcd57eba3b40fbe2cf3e7" id="r_a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4f9094183dcd57eba3b40fbe2cf3e7">echo</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write arguments to the standard output.  <br /></td></tr>
 <tr class="separator:a8e4f9094183dcd57eba3b40fbe2cf3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59122268cd82126fb38c86a60c3df9cb" id="r_a59122268cd82126fb38c86a60c3df9cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59122268cd82126fb38c86a60c3df9cb">ls</a> (int nargs, char **args)</td></tr>
+<tr class="memdesc:a59122268cd82126fb38c86a60c3df9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">List directory contents.  <br /></td></tr>
+<tr class="separator:a59122268cd82126fb38c86a60c3df9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467b6faef32b6d8358839a8c9bf72cd5" id="r_a467b6faef32b6d8358839a8c9bf72cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a467b6faef32b6d8358839a8c9bf72cd5">pwd</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a467b6faef32b6d8358839a8c9bf72cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the full filename of the current working directory.  <br /></td></tr>
 <tr class="separator:a467b6faef32b6d8358839a8c9bf72cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,6 +215,34 @@ Functions</h2></td></tr>
 <li><code>-c</code> - separate arguments with commas</li>
 <li><code>-n</code> - no newline at the end</li>
 <li><code>-l</code> - format output as a list </li>
+</ul>
+
+</div>
+</div>
+<a id="a59122268cd82126fb38c86a60c3df9cb" name="a59122268cd82126fb38c86a60c3df9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59122268cd82126fb38c86a60c3df9cb">&#9670;&#160;</a></span>ls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ls </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List directory contents. </p>
+<p>List information about the FILEs (the current directory by default).</p>
+<p>Options:</p><ul>
+<li><code>-a</code> - do not ignore entries starting with <code>.</code></li>
+<li><code>-l</code> - use a long listing format </li>
 </ul>
 
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C-Shell: src/internal/cd.c File Reference</title>
+<title>C-Shell: src/internal/ls.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('cd_8c.html',''); initResizable(true); });
+$(function(){initNavTree('ls_8c.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -120,22 +120,32 @@ $(function(){initNavTree('cd_8c.html',''); initResizable(true); });
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">cd.c File Reference</div></div>
+  <div class="headertitle"><div class="title">ls.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;dirent.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;pwd.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h.html">../internal_commands.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4a8669d38accfeb2d504ee6f9c68e382" id="r_a4a8669d38accfeb2d504ee6f9c68e382"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a8669d38accfeb2d504ee6f9c68e382">cd</a> (int nargs, char **args)</td></tr>
-<tr class="memdesc:a4a8669d38accfeb2d504ee6f9c68e382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the shell working directory.  <br /></td></tr>
-<tr class="separator:a4a8669d38accfeb2d504ee6f9c68e382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3ac72541846d667d3445774502e755" id="r_a9f3ac72541846d667d3445774502e755"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f3ac72541846d667d3445774502e755">get_details</a> (const char *const path)</td></tr>
+<tr class="separator:a9f3ac72541846d667d3445774502e755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d23d2c3fcbcc25a1c96bc993eee26e1" id="r_a6d23d2c3fcbcc25a1c96bc993eee26e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d23d2c3fcbcc25a1c96bc993eee26e1">print_dir_entries</a> (const char *const path, bool show_hidden, bool show_details)</td></tr>
+<tr class="separator:a6d23d2c3fcbcc25a1c96bc993eee26e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59122268cd82126fb38c86a60c3df9cb" id="r_a59122268cd82126fb38c86a60c3df9cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59122268cd82126fb38c86a60c3df9cb">ls</a> (int nargs, char **args)</td></tr>
+<tr class="memdesc:a59122268cd82126fb38c86a60c3df9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">List directory contents.  <br /></td></tr>
+<tr class="separator:a59122268cd82126fb38c86a60c3df9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -149,14 +159,31 @@ Variables</h2></td></tr>
 <tr class="separator:adb50a0eab9fed92fc3bfc7dfa4f2c410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4a8669d38accfeb2d504ee6f9c68e382" name="a4a8669d38accfeb2d504ee6f9c68e382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8669d38accfeb2d504ee6f9c68e382">&#9670;&#160;</a></span>cd()</h2>
+<a id="a9f3ac72541846d667d3445774502e755" name="a9f3ac72541846d667d3445774502e755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3ac72541846d667d3445774502e755">&#9670;&#160;</a></span>get_details()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int cd </td>
+          <td class="memname">char * get_details </td>
+          <td>(</td>
+          <td class="paramtype">const char *const</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59122268cd82126fb38c86a60c3df9cb" name="a59122268cd82126fb38c86a60c3df9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59122268cd82126fb38c86a60c3df9cb">&#9670;&#160;</a></span>ls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ls </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>, </td>
         </tr>
@@ -168,8 +195,38 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Change the shell working directory. </p>
-<p>If no path is provided, changes the current directory to <code>/</code>. </p>
+<p>List directory contents. </p>
+<p>List information about the FILEs (the current directory by default).</p>
+<p>Options:</p><ul>
+<li><code>-a</code> - do not ignore entries starting with <code>.</code></li>
+<li><code>-l</code> - use a long listing format </li>
+</ul>
+
+</div>
+</div>
+<a id="a6d23d2c3fcbcc25a1c96bc993eee26e1" name="a6d23d2c3fcbcc25a1c96bc993eee26e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d23d2c3fcbcc25a1c96bc993eee26e1">&#9670;&#160;</a></span>print_dir_entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int print_dir_entries </td>
+          <td>(</td>
+          <td class="paramtype">const char *const</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_hidden</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_details</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -251,7 +308,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3756d50f4003bc63fa3fe49460f9c79d.html">internal</a></li><li class="navelem"><a class="el" href="cd_8c.html">cd.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3756d50f4003bc63fa3fe49460f9c79d.html">internal</a></li><li class="navelem"><a class="el" href="ls_8c.html">ls.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
