@@ -25,11 +25,6 @@ char *get_details(const char *const path)
 	}
 
 	char file_mode[11];
-	if (file_mode == NULL)
-	{
-		fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
-		return NULL;
-	}
 
 	// file type
 	switch (file_stat.st_mode & S_IFMT)
