@@ -104,9 +104,12 @@ int loop()
 		print_prompt();
 
 		size_t line_size = LINE_BUFFER_SIZE;
-		char *line = malloc(line_size * sizeof(*line));
+		char *line = calloc(line_size, sizeof(*line));
 		read_line(line, line_size);
 		// printf("You entered: %s\n", line); // debuggging only
+
+		if (line[0] == '\0')
+			continue; // ignore empty lines
 
 		int ncmds = 0;
 		char **commands = parse_line(line, line_size, &ncmds);
@@ -124,7 +127,7 @@ int loop()
 			// }
 
 			int status = 0;
-			if (nargs > 0 && args[0] != NULL) // ignore empty lines and NULL commands
+			if (nargs > 0 && args[0] != NULL) // ignore empty or NULL commands
 				status = execute(nargs, args[0], args);
 
 			if (status != 0)
