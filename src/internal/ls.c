@@ -162,8 +162,8 @@ int ls(int nargs, char **args)
 	int c = -1;
 
 	const char *const default_path = ".";
-	bool show_hidden = false;
-	bool show_details = false;
+	option show_hidden = false;
+	option show_details = false;
 
 	// deal with the options
 	while ((c = getopt(nargs, args, "al")) != -1)
