@@ -127,6 +127,9 @@ int loop()
 		for (int nc = 0; nc < ncmds; ++nc)
 		{
 			char *command = commands[nc];
+			if (command == NULL || command[0] == '\0') // ignore empty or NULL commands
+				continue;
+
 			int nargs = 0;
 			char **args = parse_command(command, strlen(command), &nargs);
 
