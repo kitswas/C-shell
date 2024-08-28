@@ -15,6 +15,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include "internal_commands.h"
+#include "internal/history.h"
 #include "main.h"
 #include "parse.h"
 
@@ -26,6 +27,7 @@ int main()
 	cls;
 	// load config files, if any.
 	load_settings();
+	read_history_from_file();
 	// loop
 	loop();
 	// cleanup
@@ -48,8 +50,13 @@ int execute(int nargs, char *command, char **args)
 	}
 	else if (!strcasecmp(command, "exit"))
 	{
+		write_history_to_file();
 		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
+	}
+	else if (!strcasecmp(command, "history"))
+	{
+		history(nargs, args);
 	}
 	else if (!strcasecmp(command, "ls"))
 	{
@@ -110,6 +117,8 @@ int loop()
 
 		if (line[0] == '\0')
 			continue; // ignore empty lines
+
+		add_to_history(line);
 
 		int ncmds = 0;
 		char **commands = parse_line(line, line_size, &ncmds);

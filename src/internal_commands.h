@@ -41,6 +41,19 @@ int cd(int nargs, char **args);
 int echo(int nargs, char **args);
 
 /**
+ * @brief Print the history of commands.
+ *
+ * @details
+ * If no option is specified, prints the last 5 commands.
+ *
+ * Options:
+ * - `-c` - clear the history
+ * - `-r` - read the history file and write to the history list
+ * - `-w` - write the history list to the history file
+ */
+int history(int nargs, char **args);
+
+/**
  * @brief List directory contents.
  *
  * @details
