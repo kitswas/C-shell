@@ -119,6 +119,7 @@ int print_dir_entries(const char *const path, bool show_hidden, bool show_detail
 
 	if ((dir = opendir(path)) == NULL)
 	{
+		fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
 		return -1;
 	}
 
@@ -186,11 +187,13 @@ int ls(int nargs, char **args)
 	{
 		for (int i = optind; i < nargs; ++i)
 		{
-			print_dir_entries(args[optind], show_hidden, show_details);
+			fprintf(stdout, "%s\n", args[i]);
+			print_dir_entries(args[i], show_hidden, show_details);
 		}
 	}
 	else
 	{
+		fprintf(stdout, "%s\n", default_path);
 		print_dir_entries(default_path, show_hidden, show_details);
 	}
 	switch (errno)
