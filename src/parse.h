@@ -6,7 +6,8 @@
 // macros here
 
 #define C_SHELL_TOK_DELIM " \t\r\n"
-#define COMMAND_DELIM ";"
+#define JOB_DELIM ";"
+#define PIPE_DELIM "|"
 
 // global variables here
 
@@ -15,23 +16,29 @@
 // functions here
 
 /**
- * @brief Tokenizes the command.
+ * @brief Parse a command string into a command struct
  *
- * @param command A string.
- * @param command_size Length of the string.
- * @param nargs Stores the number of arguments.
- * @return An array of tokens.
+ * @param command The command string
+ * @param command_len The length of the command string
+ * @return The parsed command struct
  */
-char **parse_command(char *command, size_t command_size, int *nargs);
+struct command *parse_command(char *command, size_t command_len);
 
 /**
- * @brief Splits the line into commands using ; as a delimiter.
+ * @brief Parse a command string containing pipes into a job struct.
+ * The string should not have any semicolons.
  *
- * @param line A string.
- * @param line_size Length of the string.
- * @param ncmds Stores the number of commands.
- * @return An array of commands.
+ * @param job_str The command string
+ * @return The parsed job struct
  */
-char **parse_line(char *line, size_t line_size, int *ncmds);
+struct job *parse_job(char *job_str);
+
+/**
+ * @brief Parse a line into a list of jobs.
+ *
+ * @param line The line to parse
+ * @return A pointer to the first job in a linked list
+ */
+struct job *parse_line_to_jobs(char *line);
 
 #endif

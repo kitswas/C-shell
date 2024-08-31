@@ -18,6 +18,7 @@
 #include "internal/history.h"
 #include "main.h"
 #include "parse.h"
+#include "shelltypes.h"
 #include "terminal.h"
 
 /**
@@ -121,37 +122,18 @@ int loop()
 
 		add_to_history(line);
 
-		int ncmds = 0;
-		char **commands = parse_line(line, line_size, &ncmds);
-
-		for (int nc = 0; nc < ncmds; ++nc)
+		struct job *j = parse_line_to_jobs(line);
+		while (j)
 		{
-			char *command = commands[nc];
-			if (command == NULL || command[0] == '\0') // ignore empty or NULL commands
-				continue;
-
-			int nargs = 0;
-			char **args = parse_command(command, strlen(command), &nargs);
-
-			// printf("Command %ld: %s\n", nc, command); // debuggging only
-			// for (size_t i = 0; i < nargs; i++)		  // debuggging only
-			// {
-			// 	printf("Arg %ld: %s\n", i, args[i]);
-			// }
-
-			int status = 0;
-			if (nargs > 0 && args[0] != NULL) // ignore empty or NULL commands
-				status = execute(nargs, args[0], args);
-
-			if (status != 0)
+			printf("Job: %s\n", j->user_command); // debugging only
+			struct command *c = j->first_command;
+			while (c)
 			{
-				fprintf(stderr, "Command exit with status %d\n", status);
+				printf("Command: %s\n", c->argv[0]); // debugging only
+				c = c->next;
 			}
-
-			free(args);
+			j = j->next;
 		}
-
-		free(line);
 	}
 }
 

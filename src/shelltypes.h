@@ -1,25 +1,22 @@
 #ifndef SHELLTYPES_H
 #define SHELLTYPES_H
 
+#include <stdbool.h>
 #include <sys/types.h>
 
 // macros here
 
 // global variables here
 
+// structs here
+
 struct command
 {
 	/** The next command in the pipeline. */
 	struct command *next;
 
-	/** The actual executable can be a shell built-in or a program. */
-	union
-	{
-		/** The process to start. */
-		char **argv;
-		/** For the shell's internal use. */
-		char *internal_command;
-	} execution_unit;
+	int nargs;
+	char **argv;
 
 	int stdin, stdout, stderr;
 };
@@ -53,8 +50,6 @@ struct process
 	/** Reported status value. */
 	int status;
 };
-
-// structs here
 
 // functions here
 
