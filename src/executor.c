@@ -47,15 +47,7 @@ int execute(struct command *cmd)
 		signal(SIGTTOU, SIG_DFL);
 		signal(SIGCHLD, SIG_DFL);
 
-		if (!strcasecmp(command, "cd"))
-		{
-			cd(nargs, args);
-		}
-		else if (!strcasecmp(command, "cls"))
-		{
-			cls;
-		}
-		else if (!strcasecmp(command, "echo"))
+		if (!strcasecmp(command, "echo"))
 		{
 			echo(nargs, args);
 		}
@@ -132,59 +124,81 @@ void init_shell()
 void launch_job(struct job *j)
 {
 	struct command *cmd = j->first_command;
-	int pipe_des[2];
 
-	pid_t child_pid = fork();
-	if (child_pid == 0)
+	char *command = cmd->argv[0];
+	char **args = cmd->argv;
+	int nargs = cmd->nargs;
+
+	if (!strcasecmp(command, "cd"))
 	{
-		while (cmd)
-		{
-			if (cmd->next)
-			{
-				if (pipe(pipe_des))
-				{
-					fprintf(stderr, "[ERROR] Unable to create pipe.\n");
-					return;
-				}
-				cmd->fd_out = pipe_des[1];
-				cmd->next->fd_in = pipe_des[0];
-			}
-			else
-			{
-				cmd->fd_out = STDOUT_FILENO;
-			}
-
-			execute(cmd);
-
-			if (cmd->fd_in != STDIN_FILENO)
-				close(cmd->fd_in);
-			if (cmd->fd_out != STDOUT_FILENO)
-				close(cmd->fd_out);
-
-			cmd = cmd->next;
-		}
+		cd(nargs, args);
+	}
+	else if (!strcasecmp(command, "cls"))
+	{
+		cls;
+	}
+	else if (!strcasecmp(command, "exit"))
+	{
+		write_history_to_file();
+		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-		j->pgid = child_pid;
-		setpgid(child_pid, child_pid);
-		if (!j->background)
+		int pipe_des[2];
+
+		pid_t child_pid = fork();
+		if (child_pid == 0)
 		{
-			tcsetpgrp(STDIN_FILENO, child_pid);
-			// Send a continue signal to the job. -(j->pgid) means the process group ID.
-			if (kill(-j->pgid, SIGCONT) < 0)
-				perror("kill (SIGCONT)");
-			int status = 0;
-			do
+			while (cmd)
 			{
-				waitpid(child_pid, &status, WUNTRACED);
-			} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-			tcsetpgrp(STDIN_FILENO, getpgrp());
+				if (cmd->next)
+				{
+					if (pipe(pipe_des))
+					{
+						fprintf(stderr, "[ERROR] Unable to create pipe.\n");
+						return;
+					}
+					cmd->fd_out = pipe_des[1];
+					cmd->next->fd_in = pipe_des[0];
+				}
+				else
+				{
+					cmd->fd_out = STDOUT_FILENO;
+				}
+
+				execute(cmd);
+
+				if (cmd->fd_in != STDIN_FILENO)
+					close(cmd->fd_in);
+				if (cmd->fd_out != STDOUT_FILENO)
+					close(cmd->fd_out);
+
+				cmd = cmd->next;
+			}
+			exit(EXIT_SUCCESS);
 		}
 		else
 		{
-			printf("%d\n", j->pgid);
+			j->pgid = child_pid;
+			setpgid(child_pid, child_pid);
+			if (!j->background)
+			{
+				tcsetpgrp(STDIN_FILENO, child_pid);
+				// Send a continue signal to the job. -(j->pgid) means the process group ID.
+				if (kill(-j->pgid, SIGCONT) < 0)
+					perror("kill (SIGCONT)");
+				int status = 0;
+				do
+				{
+					waitpid(child_pid, &status, WUNTRACED);
+				} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+				tcsetpgrp(STDIN_FILENO, getpgrp());
+			}
+			else
+			{
+				printf("%d\n", j->pgid);
+			}
 		}
 	}
 }
