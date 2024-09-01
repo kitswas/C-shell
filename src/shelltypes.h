@@ -34,6 +34,8 @@ struct job
 	struct command *first_command;
 	/** Process group ID. */
 	pid_t pgid;
+	/** True if background job. */
+	bool background;
 	/** True if user has been notified about stopped job. */
 	char notified;
 };

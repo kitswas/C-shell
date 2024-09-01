@@ -1,9 +1,27 @@
-#include "parse.h"
+#include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include "parse.h"
 #include "shelltypes.h"
+
+bool is_blank(const char *str)
+{
+	if (str == NULL)
+	{
+		return true;
+	}
+	while (*str != '\0')
+	{
+		if (!isspace(*str))
+		{
+			return false;
+		}
+		++str;
+	}
+	return true;
+}
 
 struct command *parse_command(char *command, size_t command_len)
 {
@@ -42,6 +60,21 @@ struct job *parse_job(char *job_str)
 	asprintf(&j->user_command, "%s", job_str); // deep copy
 	j->notified = 0;
 	j->next = NULL;
+	j->background = false;
+
+	// Look for & at the end of the line to determine if the job is a background job
+	char *ampersand = strrchr(job_str, '&');
+	if (ampersand != NULL)
+	{
+		// Check if the string is blank after the & character
+		j->background = is_blank(ampersand + 1);
+		if (j->background)
+		{
+			*ampersand = ' '; // remove the & character
+							  //! Using '\0' instead of ' ' will cause a segfault with strlen.
+							  // TODO Investigate why.
+		}
+	}
 
 	char *rem; // strtok_r needs this for re-entry
 	char *piped = strtok_r(job_str, PIPE_DELIM, &rem);
