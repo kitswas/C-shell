@@ -31,6 +31,7 @@ int main()
 	load_settings();
 	read_history_from_file();
 	// loop
+	init_shell();
 	loop();
 	// cleanup
 	return 0;

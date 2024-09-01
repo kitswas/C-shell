@@ -7,4 +7,6 @@ int execute(struct command *cmd);
 
 void launch_job(struct job *j);
 
+void init_shell();
+
 #endif
