@@ -73,7 +73,7 @@ int execute(struct command *cmd)
 					// do nothing
 					break;
 				case ENOENT:
-					fprintf(stderr, "Command not found.\n");
+					fprintf(stderr, "Command %s not found.\n", command);
 					break;
 				default:
 					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
