@@ -4,6 +4,7 @@ project(C-shell)
 set(CMAKE_C_STANDARD 11)
 
 set(SOURCES
+	src/executor.c
 	src/main.c
 	src/internal/cd.c
 	src/internal/echo.c

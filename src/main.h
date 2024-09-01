@@ -13,21 +13,6 @@
 // functions here
 
 /**
- * @brief Executes the command.
- *
- * @param nargs Number of arguments to the command.
- * @param command The command to execute.
- * @param args The list of arguments to the command.
- * @return The exit status of the command.
- *
- * @details
- * Available commands:
- * - cls - clears the screen
- * - exit - terminates the terminal
- */
-int execute(int nargs, char *command, char **args);
-
-/**
  * @brief Will load configuration file(s).
  *
  * Not yet implemented.

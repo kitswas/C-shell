@@ -14,7 +14,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "internal_commands.h"
+#include "executor.h"
 #include "internal/history.h"
 #include "main.h"
 #include "parse.h"
@@ -33,70 +33,6 @@ int main()
 	// loop
 	loop();
 	// cleanup
-	return 0;
-}
-
-int execute(int nargs, char *command, char **args)
-{
-	if (!strcasecmp(command, "cd"))
-	{
-		cd(nargs, args);
-	}
-	else if (!strcasecmp(command, "cls"))
-	{
-		cls;
-	}
-	else if (!strcasecmp(command, "echo"))
-	{
-		echo(nargs, args);
-	}
-	else if (!strcasecmp(command, "exit"))
-	{
-		write_history_to_file();
-		printf("\033[0m"); // reset all terminal attributes
-		exit(EXIT_SUCCESS);
-	}
-	else if (!strcasecmp(command, "history"))
-	{
-		history(nargs, args);
-	}
-	else if (!strcasecmp(command, "ls"))
-	{
-		ls(nargs, args);
-	}
-	else if (!strcasecmp(command, "pwd"))
-	{
-		pwd(nargs, args);
-	}
-	else
-	{
-		pid_t child_pid = fork();
-		if (child_pid == 0)
-		{
-			errno = 0;
-			if (execvp(command, args))
-				switch (errno)
-				{
-				case 0:
-					// do nothing
-					break;
-				case ENOENT:
-					fprintf(stderr, "Command not found.\n");
-					break;
-				default:
-					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
-					break;
-				}
-			exit(EXIT_SUCCESS);
-		}
-		else
-		{
-			int status = 0;
-			waitpid(child_pid, &status, 0);
-			return status;
-		}
-	}
-
 	return 0;
 }
 
@@ -125,13 +61,14 @@ int loop()
 		struct job *j = parse_line_to_jobs(line);
 		while (j)
 		{
-			printf("Job: %s\n", j->user_command); // debugging only
-			struct command *c = j->first_command;
-			while (c)
-			{
-				printf("Command: %s\n", c->argv[0]); // debugging only
-				c = c->next;
-			}
+			// printf("Job: %s\n", j->user_command); // debugging only
+			// struct command *c = j->first_command;
+			// while (c)
+			// {
+			// 	printf("Command: %s\n", c->argv[0]); // debugging only
+			// 	c = c->next;
+			// }
+			launch_job(j);
 			j = j->next;
 		}
 	}

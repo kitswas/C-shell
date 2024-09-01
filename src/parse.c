@@ -11,9 +11,10 @@ struct command *parse_command(char *command, size_t command_len)
 	cmd->next = NULL;
 	cmd->nargs = 0;
 	cmd->argv = NULL;
-	cmd->stdin = STDIN_FILENO;
-	cmd->stdout = STDOUT_FILENO;
-	cmd->stderr = STDERR_FILENO;
+	cmd->pid = -1; // not yet executed
+	cmd->fd_in = STDIN_FILENO;
+	cmd->fd_out = STDOUT_FILENO;
+	cmd->fd_err = STDERR_FILENO;
 
 	char **tokens = calloc(command_len, sizeof(*tokens));
 	char *token = strtok(command, C_SHELL_TOK_DELIM);
@@ -50,7 +51,6 @@ struct job *parse_job(char *job_str)
 	while ((piped = strtok_r(NULL, PIPE_DELIM, &rem)) != NULL)
 	{
 		cmd->next = parse_command(piped, strlen(piped));
-		cmd->stdout = cmd->next->stdin;
 		cmd = cmd->next;
 	}
 

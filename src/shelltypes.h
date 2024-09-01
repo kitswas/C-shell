@@ -18,7 +18,9 @@ struct command
 	int nargs;
 	char **argv;
 
-	int stdin, stdout, stderr;
+	pid_t pid;
+
+	int fd_in, fd_out, fd_err;
 };
 
 /** A job is a pipeline of commands. */
