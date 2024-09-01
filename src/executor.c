@@ -36,20 +36,53 @@ int execute(struct command *cmd)
 			close(cmd->fd_err);
 		}
 
-		errno = 0;
-		if (execvp(command, args))
-			switch (errno)
-			{
-			case 0:
-				// do nothing
-				break;
-			case ENOENT:
-				fprintf(stderr, "Command not found.\n");
-				break;
-			default:
-				fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
-				break;
-			}
+		if (!strcasecmp(command, "cd"))
+		{
+			cd(nargs, args);
+		}
+		else if (!strcasecmp(command, "cls"))
+		{
+			cls;
+		}
+		else if (!strcasecmp(command, "echo"))
+		{
+			echo(nargs, args);
+		}
+		else if (!strcasecmp(command, "exit"))
+		{
+			write_history_to_file();
+			printf("\033[0m"); // reset all terminal attributes
+			exit(EXIT_SUCCESS);
+		}
+		else if (!strcasecmp(command, "history"))
+		{
+			history(nargs, args);
+		}
+		else if (!strcasecmp(command, "ls"))
+		{
+			ls(nargs, args);
+		}
+		else if (!strcasecmp(command, "pwd"))
+		{
+			pwd(nargs, args);
+		}
+		else
+		{
+			errno = 0;
+			if (execvp(command, args))
+				switch (errno)
+				{
+				case 0:
+					// do nothing
+					break;
+				case ENOENT:
+					fprintf(stderr, "Command not found.\n");
+					break;
+				default:
+					fprintf(stderr, "[ERROR] %d %s\n", errno, strerror(errno));
+					break;
+				}
+		}
 		exit(EXIT_SUCCESS);
 	}
 	else
