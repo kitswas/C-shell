@@ -17,6 +17,13 @@ int execute(struct command *cmd)
 	char **args = cmd->argv;
 	int nargs = cmd->nargs;
 
+	if (!strcasecmp(command, "exit"))
+	{
+		write_history_to_file();
+		printf("\033[0m"); // reset all terminal attributes
+		exit(EXIT_SUCCESS);
+	}
+
 	pid_t child_pid = fork();
 	if (child_pid == 0)
 	{
@@ -47,12 +54,6 @@ int execute(struct command *cmd)
 		else if (!strcasecmp(command, "echo"))
 		{
 			echo(nargs, args);
-		}
-		else if (!strcasecmp(command, "exit"))
-		{
-			write_history_to_file();
-			printf("\033[0m"); // reset all terminal attributes
-			exit(EXIT_SUCCESS);
 		}
 		else if (!strcasecmp(command, "history"))
 		{
