@@ -71,6 +71,8 @@ int loop()
 			launch_job(j);
 			j = j->next;
 		}
+
+		free(line);
 	}
 }
 
