@@ -37,6 +37,26 @@ void add_jobs_to_store(struct job *j)
 	current->next = j;
 }
 
+/**
+ * @brief Free all allocated memory for a job struct.
+ *
+ */
+void free_job(struct job *j)
+{
+	free(j->user_command);
+	while (j->first_command)
+	{
+		struct command *cmd = j->first_command;
+		j->first_command = cmd->next;
+		for (int i = 0; i < cmd->nargs; ++i)
+		{
+			free(cmd->argv[i]);
+		}
+		free(cmd);
+	}
+	free(j);
+}
+
 void list_jobs()
 {
 	struct job *current = job_store;
@@ -67,6 +87,6 @@ void remove_job_from_store(pid_t pgid)
 		{
 			job_store = current->next;
 		}
-		free(current);
+		free_job(current);
 	}
 }
