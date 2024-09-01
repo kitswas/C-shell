@@ -11,7 +11,9 @@ set(SOURCES
 	src/internal/history.c
 	src/internal/ls.c
 	src/internal/pwd.c
+	src/job_store.c
 	src/parse.c
+	src/signals.c
 	src/terminal.c
 )
 

@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include "executor.h"
 #include "internal/history.h"
+#include "job_store.h"
 #include "main.h"
 #include "parse.h"
 #include "shelltypes.h"
@@ -60,6 +61,7 @@ int loop()
 		add_to_history(line);
 
 		struct job *j = parse_line_to_jobs(line);
+		struct job *first_job = j;
 		while (j)
 		{
 			// printf("Job: %s\n", j->user_command); // debugging only
@@ -72,6 +74,8 @@ int loop()
 			launch_job(j);
 			j = j->next;
 		}
+		add_jobs_to_store(first_job);
+		// list_jobs(); // debugging only
 
 		free(line);
 	}

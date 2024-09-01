@@ -9,6 +9,7 @@
 #include "internal/history.h"
 #include "main.h"
 #include "shelltypes.h"
+#include "signals.h"
 #include "terminal.h"
 
 pid_t shell_pgid;
@@ -110,13 +111,13 @@ void init_shell()
 	// Loop until the shell is in the foreground.
 	while (tcgetpgrp(shell_terminal) != (shell_pgid = getpgrp()))
 		kill(-shell_pgid, SIGTTIN);
-	// Ignore interactive and job-control signals.
+	// Handle interactive and job-control signals.
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGTSTP, SIG_IGN);
 	signal(SIGTTIN, SIG_IGN);
 	signal(SIGTTOU, SIG_IGN);
-	signal(SIGCHLD, SIG_IGN);
+	signal(SIGCHLD, handle_sigchld);
 	// Put the shell in its own process group.
 	shell_pgid = getpid();
 	if (setpgid(shell_pgid, shell_pgid) < 0)
