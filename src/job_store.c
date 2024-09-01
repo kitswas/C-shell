@@ -57,6 +57,11 @@ void free_job(struct job *j)
 	free(j);
 }
 
+struct job *get_job_list()
+{
+	return job_store;
+}
+
 void list_jobs()
 {
 	struct job *current = job_store;
