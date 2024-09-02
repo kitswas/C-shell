@@ -152,13 +152,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sample output:</p>
-<p>pid &ndash; 231 Process Status &ndash; {R/S/S+/Z} memory &ndash; 67854 {Virtual Memory} Executable Path &ndash; ~/a.out</p>
-<p>Process status codes:</p><ol type="1">
+<div class="fragment"><div class="line">pid -- 231</div>
+<div class="line">Process Status -- {R/S/S+/Z}</div>
+<div class="line">memory -- 67854 {Virtual Memory}</div>
+<div class="line">Executable Path -- ./cshell</div>
+</div><!-- fragment --><p>Process status codes:</p><ol type="1">
 <li>R/R+: Running</li>
 <li>S/S+: Sleeping in an interruptible wait</li>
 <li>Z: Zombie</li>
-<li>T: Stopped (on a signal) Note: “+” must be added to the status code if the process is in the foreground</li>
+<li>T: Stopped (on a signal)</li>
 </ol>
+<p>Note: “+” must be added to the status code if the process is in the foreground.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pid</td><td>pid of the process, -1 for the parent process, 0 for the current process </td></tr>

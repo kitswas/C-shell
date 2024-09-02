@@ -123,6 +123,30 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
 <p>A shell written in C. For educational purposes.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Warranty NOT included. Use at your own risk.</dd></dl>
+<h1><a class="anchor" id="how-it-works"></a>
+How it works</h1>
+<p>Here's what happens when you write something and press enter after the prompt:</p>
+<div class="fragment"><div class="line">sleep 5 &amp;; echo &quot;Hello, World!&quot; | wc -c</div>
+</div><!-- fragment --><ol type="1">
+<li>The above input will be split up at <code>;</code> into two jobs (also known as pipelines or process groups).</li>
+<li>Each job will be executed sequentially in a separate process. An <code>&amp;</code> at the end of a job will run the pipeline in the background.<ul>
+<li><em>e.g.</em> The first job will run <code>sleep 5</code> in the background.</li>
+<li><em>e.g.</em> The second job will run <code>echo "Hello, World!" | wc -c</code>.</li>
+</ul>
+</li>
+<li>Each job will be split up at <code>|</code> into a series of commands.</li>
+<li>Each command will be spawned in a separate process. <br  />
+<ul>
+<li><em>e.g.</em> The first command in the second job will run <code>echo "Hello, World!"</code>.</li>
+<li><em>e.g.</em> The second command in the second job will run <code>wc -c</code>.</li>
+</ul>
+</li>
+<li>The output of one command will be piped to the input of the next command.</li>
+<li>The output of the last command in the job will be printed to the console.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>Some shell built-ins like <code>cd</code>, <code>cls</code>, <code>exit</code> and <code>jobs</code> are executed in the top-level shell process due to their nature. <br  />
+ If found at the beginning of a job, the rest of the pipeline will not be executed. <br  />
+ If found in the middle of a pipeline, the shell will complain about the command not being found.</dd></dl>
 <h1><a class="anchor" id="setting-up-your-workspace"></a>
 Setting up your workspace</h1>
 <p>This project has a <a href="https://editorconfig.org/">.editorconfig file</a> to enforce project level coding standards. <br  />

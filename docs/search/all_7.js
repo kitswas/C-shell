@@ -9,5 +9,6 @@ var searchData=
   ['history_2eh_6',['history.h',['../history_8h.html',1,'']]],
   ['history_5ffile_7',['history_file',['../history_8c.html#a4a712d7c02b564456571094ce399f7ef',1,'history.c']]],
   ['history_5flist_8',['history_list',['../structhistory__list.html',1,'']]],
-  ['how_20to_20run_9',['How to run',['../index.html#how-to-run',1,'']]]
+  ['how_20it_20works_9',['How it works',['../index.html#how-it-works',1,'']]],
+  ['how_20to_20run_10',['How to run',['../index.html#how-to-run',1,'']]]
 ];
