@@ -58,7 +58,6 @@ struct job *parse_job(char *job_str)
 	j->first_command = NULL;
 	j->pgid = -1;
 	asprintf(&j->user_command, "%s", job_str); // deep copy
-	j->notified = 0;
 	j->next = NULL;
 	j->background = false;
 

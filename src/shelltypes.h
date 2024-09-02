@@ -36,23 +36,6 @@ struct job
 	pid_t pgid;
 	/** True if background job. */
 	bool background;
-	/** True if user has been notified about stopped job. */
-	char notified;
-};
-
-/** A process represents a single external process. */
-struct process
-{
-	/** Arguments for execution. */
-	char **argv;
-	/** Process ID. */
-	pid_t pid;
-	/** True if process has completed. */
-	char completed;
-	/** True if process has stopped. */
-	char stopped;
-	/** Reported status value. */
-	int status;
 };
 
 // functions here
