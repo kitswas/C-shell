@@ -15,7 +15,7 @@ struct job *get_job(pid_t pgid)
 	{
 		current = current->next;
 	}
-	if (current->pgid == pgid)
+	if (current && current->pgid == pgid)
 		return current;
 	else
 		return NULL;
