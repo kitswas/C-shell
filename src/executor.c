@@ -66,7 +66,20 @@ int execute(struct command *cmd)
 		}
 		else if (!strcasecmp(command, "pinfo"))
 		{
-			pinfo(nargs, args);
+			pid_t lookup_pid;
+			if (nargs == 1)
+			{
+				lookup_pid = shell_pgid;
+			}
+			else
+			{
+				if (sscanf(args[1], "%d", &lookup_pid) != 1)
+				{
+					fprintf(stderr, "Invalid PID %s\n", args[1]);
+					exit(EXIT_FAILURE);
+				}
+			}
+			pinfo(lookup_pid);
 		}
 		else
 		{
