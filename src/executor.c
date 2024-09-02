@@ -145,6 +145,10 @@ void launch_job(struct job *j)
 		printf("\033[0m"); // reset all terminal attributes
 		exit(EXIT_SUCCESS);
 	}
+	else if (!strcasecmp(command, "jobs"))
+	{
+		list_jobs();
+	}
 	else
 	{
 		int pipe_des[2];
