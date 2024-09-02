@@ -15,7 +15,7 @@ void handle_sigchld(int sig)
 		struct job *j = get_job(pid);
 		if (j)
 		{
-			printf("\nCommand %s with PID %d exited with status %d\n", j->user_command, pid, status);
+			printf("\nJob %s with PGID %d exited with status %d\n", j->user_command, j->pgid, status);
 		}
 		else
 			printf("\nChild with PID %d exited with status %d\n", pid, status); // debugging only
