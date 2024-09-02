@@ -64,6 +64,10 @@ int execute(struct command *cmd)
 		{
 			pwd(nargs, args);
 		}
+		else if (!strcasecmp(command, "pinfo"))
+		{
+			pinfo(nargs, args);
+		}
 		else
 		{
 			errno = 0;

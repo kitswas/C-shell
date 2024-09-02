@@ -11,6 +11,7 @@ set(SOURCES
 	src/internal/history.c
 	src/internal/ls.c
 	src/internal/pwd.c
+	src/internal/pinfo.c
 	src/job_store.c
 	src/parse.c
 	src/signals.c

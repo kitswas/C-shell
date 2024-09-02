@@ -66,6 +66,12 @@ int history(int nargs, char **args);
 int ls(int nargs, char **args);
 
 /**
+ * @brief Print the information of the process.
+ *
+ */
+int pinfo(int nargs, char **args);
+
+/**
  * @brief Print the full filename of the current working directory.
  *
  * @details
