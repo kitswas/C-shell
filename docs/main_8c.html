@@ -132,19 +132,19 @@ $(function(){initNavTree('main_8c.html',''); initResizable(true); });
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;sys/wait.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="internal__commands_8h.html">internal_commands.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="executor_8h.html">executor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="history_8h.html">internal/history.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="job__store_8h.html">job_store.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="parse_8h.html">parse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shelltypes_8h.html">shelltypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="terminal_8h.html">terminal.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution starts here.  <br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada308c0ea28c53627e71ef3a4ef600ef" id="r_ada308c0ea28c53627e71ef3a4ef600ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada308c0ea28c53627e71ef3a4ef600ef">execute</a> (int nargs, char *command, char **args)</td></tr>
-<tr class="memdesc:ada308c0ea28c53627e71ef3a4ef600ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command.  <br /></td></tr>
-<tr class="separator:ada308c0ea28c53627e71ef3a4ef600ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad074a0780bf1da0e5d495a0b54c754a4" id="r_ad074a0780bf1da0e5d495a0b54c754a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad074a0780bf1da0e5d495a0b54c754a4">load_settings</a> ()</td></tr>
 <tr class="memdesc:ad074a0780bf1da0e5d495a0b54c754a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will load configuration file(s).  <br /></td></tr>
 <tr class="separator:ad074a0780bf1da0e5d495a0b54c754a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,9 +154,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a599d4f40a5e145d7a701ec49b73426a6" id="r_a599d4f40a5e145d7a701ec49b73426a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599d4f40a5e145d7a701ec49b73426a6">print_prompt</a> ()</td></tr>
 <tr class="memdesc:a599d4f40a5e145d7a701ec49b73426a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints <code>username@machinename:path&gt;</code>.  <br /></td></tr>
 <tr class="separator:a599d4f40a5e145d7a701ec49b73426a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdc51cd121c86fe5a560f1f54f71a64d" id="r_acdc51cd121c86fe5a560f1f54f71a64d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc51cd121c86fe5a560f1f54f71a64d">read_line</a> (char *buffer, size_t buffer_size)</td></tr>
-<tr class="memdesc:acdc51cd121c86fe5a560f1f54f71a64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
-<tr class="separator:acdc51cd121c86fe5a560f1f54f71a64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The entrypoint to the program. </p>
@@ -164,47 +161,6 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2022-11-03</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ada308c0ea28c53627e71ef3a4ef600ef" name="ada308c0ea28c53627e71ef3a4ef600ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada308c0ea28c53627e71ef3a4ef600ef">&#9670;&#160;</a></span>execute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int execute </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Executes the command. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nargs</td><td>Number of arguments to the command. </td></tr>
-    <tr><td class="paramname">command</td><td>The command to execute. </td></tr>
-    <tr><td class="paramname">args</td><td>The list of arguments to the command. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The exit status of the command.</dd></dl>
-<p>Available commands:</p><ul>
-<li>cls - clears the screen</li>
-<li>exit - terminates the terminal </li>
-</ul>
-
-</div>
-</div>
 <a id="ad074a0780bf1da0e5d495a0b54c754a4" name="ad074a0780bf1da0e5d495a0b54c754a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad074a0780bf1da0e5d495a0b54c754a4">&#9670;&#160;</a></span>load_settings()</h2>
 
@@ -280,37 +236,6 @@ Functions</h2></td></tr>
 
 <p>Prints <code>username@machinename:path&gt;</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of characters printed. </dd></dl>
-
-</div>
-</div>
-<a id="acdc51cd121c86fe5a560f1f54f71a64d" name="acdc51cd121c86fe5a560f1f54f71a64d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdc51cd121c86fe5a560f1f54f71a64d">&#9670;&#160;</a></span>read_line()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t read_line </td>
-          <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reads a line from stdin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>The buffer to write into. </td></tr>
-    <tr><td class="paramname">buffer_size</td><td>The size of the provided buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of characters read. </dd></dl>
 
 </div>
 </div>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['echo_0',['echo',['../echo_8c.html#a8e4f9094183dcd57eba3b40fbe2cf3e7',1,'echo(int nargs, char **args):&#160;echo.c'],['../internal__commands_8h.html#a8e4f9094183dcd57eba3b40fbe2cf3e7',1,'echo(int nargs, char **args):&#160;echo.c']]],
-  ['echo_2ec_1',['echo.c',['../echo_8c.html',1,'']]],
-  ['execute_2',['execute',['../main_8c.html#ada308c0ea28c53627e71ef3a4ef600ef',1,'execute(int nargs, char *command, char **args):&#160;main.c'],['../main_8h.html#ada308c0ea28c53627e71ef3a4ef600ef',1,'execute(int nargs, char *command, char **args):&#160;main.c']]]
+  ['default_5fhist_5fitems_0',['DEFAULT_HIST_ITEMS',['../history_8h.html#a37a28a32656fe801344e8d5f9058b0a1',1,'history.h']]],
+  ['documentation_1',['Generating Documentation',['../index.html#generating-documentation',1,'']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
-  ['main_2eh_2',['main.h',['../main_8h.html',1,'']]],
-  ['max_5fhistory_5fitems_3',['MAX_HISTORY_ITEMS',['../history_8h.html#ad0991b69404cb479039b1b9ad0b79e66',1,'history.h']]],
-  ['maxhostnamelen_4',['MAXHOSTNAMELEN',['../main_8h.html#afd80ecbe3170ca4fc85b65cda8659f82',1,'main.h']]]
+  ['init_5fshell_0',['init_shell',['../executor_8c.html#a3a5b33cdd8fb591704c9adfcf908a273',1,'init_shell():&#160;executor.c'],['../executor_8h.html#a3a5b33cdd8fb591704c9adfcf908a273',1,'init_shell():&#160;executor.c']]],
+  ['internal_5fcommands_2eh_1',['internal_commands.h',['../internal__commands_8h.html',1,'']]],
+  ['is_5fblank_2',['is_blank',['../parse_8c.html#a8e83811d30a48517fbebcb5caffdbe97',1,'parse.c']]]
 ];

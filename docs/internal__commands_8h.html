@@ -147,6 +147,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a59122268cd82126fb38c86a60c3df9cb" id="r_a59122268cd82126fb38c86a60c3df9cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59122268cd82126fb38c86a60c3df9cb">ls</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a59122268cd82126fb38c86a60c3df9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">List directory contents.  <br /></td></tr>
 <tr class="separator:a59122268cd82126fb38c86a60c3df9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37d3d14336bc40d58a1185b767ada3e" id="r_ad37d3d14336bc40d58a1185b767ada3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad37d3d14336bc40d58a1185b767ada3e">pinfo</a> (pid_t pid)</td></tr>
+<tr class="separator:ad37d3d14336bc40d58a1185b767ada3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467b6faef32b6d8358839a8c9bf72cd5" id="r_a467b6faef32b6d8358839a8c9bf72cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a467b6faef32b6d8358839a8c9bf72cd5">pwd</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a467b6faef32b6d8358839a8c9bf72cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the full filename of the current working directory.  <br /></td></tr>
 <tr class="separator:a467b6faef32b6d8358839a8c9bf72cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,6 +278,38 @@ Functions</h2></td></tr>
 <li><code>-a</code> - do not ignore entries starting with <code>.</code></li>
 <li><code>-l</code> - use a long listing format </li>
 </ul>
+
+</div>
+</div>
+<a id="ad37d3d14336bc40d58a1185b767ada3e" name="ad37d3d14336bc40d58a1185b767ada3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37d3d14336bc40d58a1185b767ada3e">&#9670;&#160;</a></span>pinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pinfo </td>
+          <td>(</td>
+          <td class="paramtype">pid_t</td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sample output:</p>
+<p>pid &ndash; 231 Process Status &ndash; {R/S/S+/Z} memory &ndash; 67854 {Virtual Memory} Executable Path &ndash; ~/a.out</p>
+<p>Process status codes:</p><ol type="1">
+<li>R/R+: Running</li>
+<li>S/S+: Sleeping in an interruptible wait</li>
+<li>Z: Zombie</li>
+<li>T: Stopped (on a signal) Note: “+” must be added to the status code if the process is in the foreground</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pid</td><td>pid of the process, -1 for the parent process, 0 for the current process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, -1 on failure </dd></dl>
 
 </div>
 </div>

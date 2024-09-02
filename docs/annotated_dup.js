@@ -1,4 +1,6 @@
 var annotated_dup =
 [
-    [ "history_list", "structhistory__list.html", "structhistory__list" ]
+    [ "command", "structcommand.html", "structcommand" ],
+    [ "history_list", "structhistory__list.html", "structhistory__list" ],
+    [ "job", "structjob.html", "structjob" ]
 ];

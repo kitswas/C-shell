@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['line_5fbuffer_5fsize_0',['LINE_BUFFER_SIZE',['../main_8h.html#afa0499dcb85922b683da3918f512adb6',1,'main.h']]]
+  ['job_5fdelim_0',['JOB_DELIM',['../parse_8h.html#a04d88d415fb053b541e7aae634c04260',1,'parse.h']]]
 ];
