@@ -68,17 +68,20 @@ int ls(int nargs, char **args);
 /**
  * Sample output:
  *
+ * ```
  * pid -- 231
  * Process Status -- {R/S/S+/Z}
  * memory -- 67854 {Virtual Memory}
- * Executable Path -- ~/a.out
+ * Executable Path -- ./cshell
+ * ```
  *
  * Process status codes:
  * 1. R/R+: Running
  * 2. S/S+: Sleeping in an interruptible wait
  * 3. Z: Zombie
  * 4. T: Stopped (on a signal)
- * Note: “+” must be added to the status code if the process is in the foreground
+ *
+ * Note: “+” must be added to the status code if the process is in the foreground.
  *
  * @param pid pid of the process, -1 for the parent process, 0 for the current process
  * @return int 0 on success, -1 on failure
