@@ -3,4 +3,6 @@
 
 void handle_sigchld(int sig);
 
+void handle_sigtstp(int sig);
+
 #endif

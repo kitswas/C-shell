@@ -61,7 +61,6 @@ int loop()
 		add_to_history(line);
 
 		struct job *j = parse_line_to_jobs(line);
-		struct job *first_job = j;
 		while (j)
 		{
 			// printf("Job: %s\n", j->user_command); // debugging only
@@ -71,11 +70,12 @@ int loop()
 			// 	printf("Command: %s\n", c->argv[0]); // debugging only
 			// 	c = c->next;
 			// }
+			struct job *next_job = j->next; // save the next job because we might free j
+			j->next = NULL;					// unlink the job from the list
 			launch_job(j);
-			j = j->next;
+			// list_jobs(); // debugging only
+			j = next_job;
 		}
-		add_jobs_to_store(first_job);
-		// list_jobs(); // debugging only
 
 		free(line);
 	}

@@ -56,7 +56,7 @@ struct job *parse_job(char *job_str)
 {
 	struct job *j = malloc(sizeof(*j));
 	j->first_command = NULL;
-	j->pgid = 0;
+	j->pgid = -1;
 	asprintf(&j->user_command, "%s", job_str); // deep copy
 	j->notified = 0;
 	j->next = NULL;

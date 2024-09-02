@@ -7,6 +7,7 @@
 #include <wait.h>
 #include "internal_commands.h"
 #include "internal/history.h"
+#include "job_store.h"
 #include "main.h"
 #include "shelltypes.h"
 #include "signals.h"
@@ -85,6 +86,7 @@ int execute(struct command *cmd)
 	else
 	{
 		cmd->pid = child_pid;
+		// printf("Command %s started with PID %d in process group %d\n", command, child_pid, getpgrp()); // debugging only
 		int status = 0;
 		do
 		{
@@ -106,7 +108,7 @@ void init_shell()
 	// Handle interactive and job-control signals.
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
-	signal(SIGTSTP, SIG_IGN);
+	signal(SIGTSTP, handle_sigtstp);
 	signal(SIGTTIN, SIG_IGN);
 	signal(SIGTTOU, SIG_IGN);
 	signal(SIGCHLD, handle_sigchld);
@@ -181,7 +183,10 @@ void launch_job(struct job *j)
 		else
 		{
 			j->pgid = child_pid;
+			// printf("Job %s started with PID %d\n", j->user_command, child_pid); // debugging only
 			setpgid(child_pid, child_pid);
+
+			add_jobs_to_store(j);
 			if (!j->background)
 			{
 				tcsetpgrp(STDIN_FILENO, child_pid);
@@ -192,7 +197,12 @@ void launch_job(struct job *j)
 				do
 				{
 					waitpid(child_pid, &status, WUNTRACED);
-				} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+				} while (!WIFEXITED(status) && !WIFSIGNALED(status) && !WIFSTOPPED(status));
+				if (WIFEXITED(status))
+				{
+					remove_job_from_store(j->pgid);
+				}
+
 				tcsetpgrp(STDIN_FILENO, getpgrp());
 			}
 			else

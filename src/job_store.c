@@ -67,7 +67,7 @@ void list_jobs()
 	struct job *current = job_store;
 	while (current)
 	{
-		printf("Job: %s\tPID: %d\n", current->user_command, current->pgid);
+		printf("Job: %s\tPGID: %d\n", current->user_command, current->pgid);
 		current = current->next;
 	}
 }
