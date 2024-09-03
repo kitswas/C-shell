@@ -8,6 +8,7 @@ set(SOURCES
 	src/main.c
 	src/internal/cd.c
 	src/internal/echo.c
+	src/internal/exit.c
 	src/internal/history.c
 	src/internal/ls.c
 	src/internal/pwd.c

@@ -101,4 +101,19 @@ int pinfo(pid_t pid);
  */
 int pwd(int nargs, char **args);
 
+/**
+ * @brief Quit the shell.
+ *
+ * @details
+ * Exits the shell with the given status.
+ *
+ * @param status exit status
+ */
+void quit_shell_with_status(int status);
+
+/**
+ * @brief Quit the shell with status 0.
+ */
+void quit_shell();
+
 #endif

@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <wait.h>
 #include "internal_commands.h"
-#include "internal/history.h"
 #include "job_store.h"
 #include "main.h"
 #include "redirection.h"
@@ -159,9 +158,7 @@ void launch_job(struct job *j)
 	}
 	else if (!strcasecmp(command, "exit"))
 	{
-		write_history_to_file();
-		printf("\033[0m"); // reset all terminal attributes
-		exit(EXIT_SUCCESS);
+		quit_shell();
 	}
 	else if (!strcasecmp(command, "jobs"))
 	{
