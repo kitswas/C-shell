@@ -158,9 +158,11 @@ var NAVTREEINDEX0 =
 "structjob.html#a62068299554d85f3a5a26eebf68abfe5":[4,0,2,0],
 "terminal_8c.html":[5,0,0,15],
 "terminal_8c.html#acdc51cd121c86fe5a560f1f54f71a64d":[5,0,0,15,0],
+"terminal_8c.html#ad8c3e8e334df8597f219739a3b7316d2":[5,0,0,15,2],
 "terminal_8c.html#afc4a340f4a9e37af742ab63e2ccf0579":[5,0,0,15,1],
 "terminal_8h.html":[5,0,0,16],
 "terminal_8h.html#aaece7c73045f420fc5eda905e2861b70":[5,0,0,16,0],
-"terminal_8h.html#acdc51cd121c86fe5a560f1f54f71a64d":[5,0,0,16,1],
-"terminal_8h.html#afc4a340f4a9e37af742ab63e2ccf0579":[5,0,0,16,2]
+"terminal_8h.html#acdc51cd121c86fe5a560f1f54f71a64d":[5,0,0,16,2],
+"terminal_8h.html#ae897199a90b524b5e694bee82c2248e1":[5,0,0,16,1],
+"terminal_8h.html#afc4a340f4a9e37af742ab63e2ccf0579":[5,0,0,16,3]
 };

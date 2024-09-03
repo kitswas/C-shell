@@ -118,18 +118,28 @@ $(function(){initNavTree('terminal_8c.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">terminal.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;dirent.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h.html">internal_commands.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="terminal_8h.html">terminal.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>filter_context</b></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad8c3e8e334df8597f219739a3b7316d2" id="r_ad8c3e8e334df8597f219739a3b7316d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8c3e8e334df8597f219739a3b7316d2">starts_with</a> (const char *restrict string, const char *restrict prefix)</td></tr>
+<tr class="separator:ad8c3e8e334df8597f219739a3b7316d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc51cd121c86fe5a560f1f54f71a64d" id="r_acdc51cd121c86fe5a560f1f54f71a64d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc51cd121c86fe5a560f1f54f71a64d">read_line</a> (char *buffer, size_t buffer_size)</td></tr>
 <tr class="memdesc:acdc51cd121c86fe5a560f1f54f71a64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
 <tr class="separator:acdc51cd121c86fe5a560f1f54f71a64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,6 +213,27 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success. </dd></dl>
+
+</div>
+</div>
+<a id="ad8c3e8e334df8597f219739a3b7316d2" name="ad8c3e8e334df8597f219739a3b7316d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c3e8e334df8597f219739a3b7316d2">&#9670;&#160;</a></span>starts_with()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int starts_with </td>
+          <td>(</td>
+          <td class="paramtype">const char *restrict</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *restrict</td>          <td class="paramname"><span class="paramname"><em>prefix</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

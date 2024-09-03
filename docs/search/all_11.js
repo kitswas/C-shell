@@ -8,5 +8,6 @@ var searchData=
   ['shelltypes_2eh_5',['shelltypes.h',['../shelltypes_8h.html',1,'']]],
   ['show_5ferror_6',['show_error',['../redirection_8c.html#a2d69d0bd084483a86373801a6f8990f6',1,'redirection.c']]],
   ['signals_2ec_7',['signals.c',['../signals_8c.html',1,'']]],
-  ['signals_2eh_8',['signals.h',['../signals_8h.html',1,'']]]
+  ['signals_2eh_8',['signals.h',['../signals_8h.html',1,'']]],
+  ['starts_5fwith_9',['starts_with',['../terminal_8c.html#ad8c3e8e334df8597f219739a3b7316d2',1,'terminal.c']]]
 ];
