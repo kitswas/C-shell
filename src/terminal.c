@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "internal_commands.h"
 #include "terminal.h"
 
 size_t read_line(char *buffer, size_t buffer_size)
@@ -60,11 +61,7 @@ size_t read_line(char *buffer, size_t buffer_size)
 			buffer[0] = '\0';
 			return 0;
 		case 4: // ctrl-d
-			if (i == 0)
-			{
-				buffer[0] = '\0';
-				return 0;
-			}
+			quit_shell();
 			break;
 		default:
 			buffer[i] = (char)ch;
