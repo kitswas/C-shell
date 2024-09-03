@@ -1,8 +1,36 @@
+#include <dirent.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include "internal_commands.h"
 #include "terminal.h"
+
+int starts_with(const char *restrict string, const char *restrict prefix)
+{
+	while (*prefix)
+	{
+		if (*prefix++ != *string++)
+			return 0;
+	}
+	return 1;
+}
+
+static struct filter_context
+{
+	const char *buffer;
+} *filter_ctx;
+
+// Check if the entry name starts with the buffer
+static int filter(const struct dirent *entry, const char *buffer)
+{
+	return starts_with(entry->d_name, buffer);
+}
+
+static int filter_wrapper(const struct dirent *entry)
+{
+	return filter(entry, filter_ctx->buffer);
+}
 
 size_t read_line(char *buffer, size_t buffer_size)
 {
@@ -63,12 +91,58 @@ size_t read_line(char *buffer, size_t buffer_size)
 		case 4: // ctrl-d
 			quit_shell();
 			break;
+		case '\t': // tab completion
+			;
+			int entries = 0;
+			struct dirent **namelist;
+			buffer[i + 1] = '\0'; // null terminate the input string for filtering
+			char *last_space = strrchr(buffer, ' ');
+			filter_ctx = &(struct filter_context){.buffer = last_space ? last_space + 1 : buffer};
+			// See https://www.gnu.org/software/libc/manual/pdf/libc.pdf#Simple%20Directory%20Lister%20Mark%20II
+			entries = scandir(".", &namelist, filter_wrapper, alphasort);
+			if (entries < 0)
+			{
+				perror("[ERROR] scandir");
+				break;
+			}
+			else if (entries == 1)
+			{
+				// Append the completion to the buffer if it fits
+				size_t len = strlen(namelist[0]->d_name);
+				size_t chars_to_delete = last_space ? (size_t)(buffer + i - last_space - 1) : i;
+				// printf("%ld\n", chars_to_delete); // debugging only
+				if (i + len - chars_to_delete < buffer_size - 1)
+				{
+					strcpy(buffer + i - chars_to_delete, namelist[0]->d_name);
+					i += len - chars_to_delete;
+					// Echo the completion
+					printf("%s", namelist[0]->d_name + chars_to_delete);
+				}
+				free(namelist[0]);
+			}
+			else if (entries > 1 && entries <= MAX_TAB_COMPLETION_ENTRIES)
+			{
+				printf("\n");
+				for (int j = 0; j < entries; ++j)
+				{
+					printf("\t%s", namelist[j]->d_name);
+					free(namelist[j]);
+				}
+				free(namelist);
+				printf("\n");
+
+				// Cancel the input line
+				buffer[0] = '\0';
+				return 0;
+			}
+
+			break;
 		default:
 			buffer[i] = (char)ch;
 			++i;
 			putchar(ch);
 		}
-	} while (ch != '\n' && ch != EOF && i < buffer_size);
+	} while (ch != '\n' && ch != EOF && i < buffer_size - 1);
 	buffer[i - 1] = '\0';			// null terminate the string
 	while (ch != '\n' && ch != EOF) // discard the rest of the input line
 		ch = getchar();

@@ -9,6 +9,7 @@
 
 /** Clears the screen. Requires terminal support for ANSI escape sequences. */
 #define cls printf("\033[2J\033[1;1H");
+#define MAX_TAB_COMPLETION_ENTRIES 5
 
 // global variables here
 
