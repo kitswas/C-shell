@@ -14,6 +14,7 @@ set(SOURCES
 	src/internal/pinfo.c
 	src/job_store.c
 	src/parse.c
+	src/redirection.c
 	src/signals.c
 	src/terminal.c
 )

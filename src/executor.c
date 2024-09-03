@@ -9,6 +9,7 @@
 #include "internal/history.h"
 #include "job_store.h"
 #include "main.h"
+#include "redirection.h"
 #include "shelltypes.h"
 #include "signals.h"
 #include "terminal.h"
@@ -190,6 +191,8 @@ void launch_job(struct job *j)
 					cmd->fd_out = STDOUT_FILENO;
 				}
 
+				if (handle_redirection(cmd) < 0)
+					exit(EXIT_FAILURE);
 				execute(cmd);
 
 				if (cmd->fd_in != STDIN_FILENO)
