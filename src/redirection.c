@@ -1,6 +1,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include "shelltypes.h"
@@ -50,7 +51,13 @@ int handle_redirection(struct command *cmd)
 			}
 			cmd->fd_in = fd;
 			cmd->nargs -= 2;
-			memmove(cmd->argv + i, cmd->argv + i + 2, (size_t)(cmd->nargs - i) * sizeof(char *));
+			// Left shift the arguments
+			for (int j = i; j < cmd->nargs; ++j)
+			{
+				cmd->argv[j] = cmd->argv[j + 2];
+			}
+			cmd->argv = realloc(cmd->argv, (size_t)(cmd->nargs + 1) * sizeof(char *));
+			cmd->argv[cmd->nargs] = NULL; // Null-terminate the arguments
 		}
 		else if (!strcmp(cmd->argv[i], ">"))
 		{
@@ -72,7 +79,13 @@ int handle_redirection(struct command *cmd)
 			}
 			cmd->fd_out = fd;
 			cmd->nargs -= 2;
-			memmove(cmd->argv + i, cmd->argv + i + 2, (size_t)(cmd->nargs - i) * sizeof(char *));
+			// Left shift the arguments
+			for (int j = i; j < cmd->nargs; ++j)
+			{
+				cmd->argv[j] = cmd->argv[j + 2];
+			}
+			cmd->argv = realloc(cmd->argv, (size_t)(cmd->nargs + 1) * sizeof(char *));
+			cmd->argv[cmd->nargs] = NULL; // Null-terminate the arguments
 		}
 		else if (!strcmp(cmd->argv[i], "2>"))
 		{
@@ -94,7 +107,13 @@ int handle_redirection(struct command *cmd)
 			}
 			cmd->fd_err = fd;
 			cmd->nargs -= 2;
-			memmove(cmd->argv + i, cmd->argv + i + 2, (size_t)(cmd->nargs - i) * sizeof(char *));
+			// Left shift the arguments
+			for (int j = i; j < cmd->nargs; ++j)
+			{
+				cmd->argv[j] = cmd->argv[j + 2];
+			}
+			cmd->argv = realloc(cmd->argv, (size_t)(cmd->nargs + 1) * sizeof(char *));
+			cmd->argv[cmd->nargs] = NULL; // Null-terminate the arguments
 		}
 	}
 	return 0;

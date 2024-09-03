@@ -174,6 +174,7 @@ void launch_job(struct job *j)
 		pid_t child_pid = fork();
 		if (child_pid == 0)
 		{
+			// sleep(60); // debugging only - time to attach debugger
 			while (cmd)
 			{
 				if (cmd->next)
