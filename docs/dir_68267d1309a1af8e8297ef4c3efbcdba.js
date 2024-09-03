@@ -10,6 +10,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "main.h", "main_8h.html", "main_8h" ],
     [ "parse.c", "parse_8c.html", "parse_8c" ],
     [ "parse.h", "parse_8h.html", "parse_8h" ],
+    [ "redirection.c", "redirection_8c.html", "redirection_8c" ],
+    [ "redirection.h", "redirection_8h.html", "redirection_8h" ],
     [ "shelltypes.h", "shelltypes_8h.html", "shelltypes_8h" ],
     [ "signals.c", "signals_8c.html", "signals_8c" ],
     [ "signals.h", "signals_8h.html", "signals_8h" ],

@@ -6,6 +6,7 @@ var searchData=
   ['shell_5fpgid_3',['shell_pgid',['../executor_8c.html#afdad9ad3f210967275dfd51e61237173',1,'executor.c']]],
   ['shell_5fterminal_4',['shell_terminal',['../executor_8c.html#a4c41dc73f1e5154a8f75e1eba36fe46e',1,'executor.c']]],
   ['shelltypes_2eh_5',['shelltypes.h',['../shelltypes_8h.html',1,'']]],
-  ['signals_2ec_6',['signals.c',['../signals_8c.html',1,'']]],
-  ['signals_2eh_7',['signals.h',['../signals_8h.html',1,'']]]
+  ['show_5ferror_6',['show_error',['../redirection_8c.html#a2d69d0bd084483a86373801a6f8990f6',1,'redirection.c']]],
+  ['signals_2ec_7',['signals.c',['../signals_8c.html',1,'']]],
+  ['signals_2eh_8',['signals.h',['../signals_8h.html',1,'']]]
 ];
