@@ -152,6 +152,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a467b6faef32b6d8358839a8c9bf72cd5" id="r_a467b6faef32b6d8358839a8c9bf72cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a467b6faef32b6d8358839a8c9bf72cd5">pwd</a> (int nargs, char **args)</td></tr>
 <tr class="memdesc:a467b6faef32b6d8358839a8c9bf72cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the full filename of the current working directory.  <br /></td></tr>
 <tr class="separator:a467b6faef32b6d8358839a8c9bf72cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826b004b82b48a4a84a6bb2994985747" id="r_a826b004b82b48a4a84a6bb2994985747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826b004b82b48a4a84a6bb2994985747">quit_shell_with_status</a> (int status)</td></tr>
+<tr class="memdesc:a826b004b82b48a4a84a6bb2994985747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit the shell.  <br /></td></tr>
+<tr class="separator:a826b004b82b48a4a84a6bb2994985747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32119340c4609e634eaa58c6e84c3e58" id="r_a32119340c4609e634eaa58c6e84c3e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32119340c4609e634eaa58c6e84c3e58">quit_shell</a> ()</td></tr>
+<tr class="memdesc:a32119340c4609e634eaa58c6e84c3e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit the shell with status 0.  <br /></td></tr>
+<tr class="separator:a32119340c4609e634eaa58c6e84c3e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header file contains declarations for the internal commands. </p>
@@ -342,6 +348,51 @@ Functions</h2></td></tr>
 <li><code>-L</code> - use PWD from environment</li>
 <li><code>-P</code> - resolves symlinks to get the current working directory. </li>
 </ul>
+
+</div>
+</div>
+<a id="a32119340c4609e634eaa58c6e84c3e58" name="a32119340c4609e634eaa58c6e84c3e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32119340c4609e634eaa58c6e84c3e58">&#9670;&#160;</a></span>quit_shell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void quit_shell </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quit the shell with status 0. </p>
+
+</div>
+</div>
+<a id="a826b004b82b48a4a84a6bb2994985747" name="a826b004b82b48a4a84a6bb2994985747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826b004b82b48a4a84a6bb2994985747">&#9670;&#160;</a></span>quit_shell_with_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void quit_shell_with_status </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>status</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quit the shell. </p>
+<p>Exits the shell with the given status.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>exit status </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
