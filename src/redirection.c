@@ -59,8 +59,9 @@ int handle_redirection(struct command *cmd)
 			cmd->argv = realloc(cmd->argv, (size_t)(cmd->nargs + 1) * sizeof(char *));
 			cmd->argv[cmd->nargs] = NULL; // Null-terminate the arguments
 		}
-		else if (!strcmp(cmd->argv[i], ">"))
+		else if (!strcmp(cmd->argv[i], ">") || !strcmp(cmd->argv[i], ">>"))
 		{
+			int mode = strcmp(cmd->argv[i], ">>") == 0 ? O_APPEND : O_TRUNC;
 			if (cmd->fd_out != STDOUT_FILENO)
 			{
 				fprintf(stderr, "[REDIRECT ERROR] Multiple output redirections\n");
@@ -71,7 +72,7 @@ int handle_redirection(struct command *cmd)
 				fprintf(stderr, "[REDIRECT ERROR] No output file specified\n");
 				return -1;
 			}
-			fd = open(cmd->argv[i + 1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+			fd = open(cmd->argv[i + 1], O_WRONLY | O_CREAT | mode, 0644);
 			if (fd == -1)
 			{
 				show_error(cmd->argv[i + 1]);
