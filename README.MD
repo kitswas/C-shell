@@ -24,10 +24,17 @@ sleep 5 &; echo "Hello, World!" | wc -c
 5. The output of one command will be piped to the input of the next command.
 6. The output of the last command in the job will be printed to the console.
 
-> [!NOTE]  
-> Some shell built-ins like `cd`, `cls`, `exit` and `jobs` are executed in the top-level shell process due to their nature.  
-> If found at the beginning of a job, the rest of the pipeline will not be executed.  
-> If found in the middle of a pipeline, the shell will complain about the command not being found.
+### Pitfalls to avoid
+  
+- **Some shell built-ins like `cd`, `cls`, `exit` and `jobs` are executed in the top-level shell process due to their nature.**  
+  - *e.g.* `cd ..` will change the directory of the shell process.
+  - *e.g.* `exit` will exit the shell process.
+  - If found at the beginning of a job, the rest of the pipeline will not be executed.  
+  - If found in the middle of a pipeline, the shell will complain about the command not being found.
+
+- **The redirection operators `>`, `>>` and `<` must be space separated from the command and the file name.**  
+  - *e.g.* `echo "Hello, World!" > file.txt` is valid.
+  - *e.g.* `echo "Hello, World!">file.txt` is invalid.
 
 ## Setting up your workspace
 
@@ -51,7 +58,7 @@ cmake --build build --config Release
 ./build/cshell
 ```
 
-## Generating Documentation
+## Generating and Viewing Documentation
 
 This project uses [Doxygen](https://www.doxygen.nl/index.html) to generate documentation.  
 If Doxygen is available on your system,  
@@ -61,6 +68,17 @@ You can generate the documentation by running the following command:
 doxygen Doxyfile
 ```
 
+This repository also has an automated workflow to generate documentatation via Github Actions.  
+
 The generated documentation can be viewed at [/docs](./docs/index.html).
 
-This repository also has an automated workflow to generate documentatation via Github Actions.  
+```bash
+open docs/index.html # or open the file from the OS file manager
+```
+
+```bash
+pushd docs ; python3 -m https.server 9999; popd # if you have python installed and want to use a server
+```
+
+A good starting point to explore the codebase is the [file listing page](./docs/files.html).
+([files.html](files.html) if you are viewing this in a browser)
