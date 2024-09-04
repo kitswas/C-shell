@@ -7,7 +7,7 @@
 #include "internal/history.h"
 #include "terminal.h"
 
-int starts_with(const char *restrict string, const char *restrict prefix)
+static int starts_with(const char *restrict string, const char *restrict prefix)
 {
 	while (*prefix)
 	{
