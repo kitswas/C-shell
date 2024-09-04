@@ -13,6 +13,7 @@ set(SOURCES
 	src/internal/ls.c
 	src/internal/pwd.c
 	src/internal/pinfo.c
+	src/internal/search.c
 	src/job_store.c
 	src/parse.c
 	src/redirection.c

@@ -116,4 +116,11 @@ void quit_shell_with_status(int status);
  */
 void quit_shell();
 
+/**
+ * @brief Search for a given file or folder under the current directory recursively.
+ *
+ * Prints True or False to stdout depending on whether the file or folder exists.
+ */
+int search(int nargs, char **args);
+
 #endif

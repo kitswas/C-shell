@@ -52,6 +52,10 @@ int execute(struct command *cmd)
 		{
 			echo(nargs, args);
 		}
+		else if (!strcasecmp(command, "search"))
+		{
+			search(nargs, args);
+		}
 		else if (!strcasecmp(command, "history"))
 		{
 			history(nargs, args);
