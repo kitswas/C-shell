@@ -4,7 +4,7 @@
 // macros here
 
 /** The default number of items to print when the user does not specify a number. */
-#define DEFAULT_HIST_ITEMS 5
+#define DEFAULT_HIST_ITEMS 10
 #define MAX_HISTORY_ITEMS 20
 
 // global variables here
