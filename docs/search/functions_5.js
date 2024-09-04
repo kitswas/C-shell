@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['handle_5fredirection_0',['handle_redirection',['../redirection_8c.html#a8e641feb46113342b46f3f65c40aabdc',1,'handle_redirection(struct command *cmd):&#160;redirection.c'],['../redirection_8h.html#a8e641feb46113342b46f3f65c40aabdc',1,'handle_redirection(struct command *cmd):&#160;redirection.c']]],
-  ['handle_5fsigchld_1',['handle_sigchld',['../signals_8c.html#a3af6d25ecb468f36d283de4189352b24',1,'handle_sigchld(int sig):&#160;signals.c'],['../signals_8h.html#a3af6d25ecb468f36d283de4189352b24',1,'handle_sigchld(int sig):&#160;signals.c']]],
-  ['handle_5fsigtstp_2',['handle_sigtstp',['../signals_8c.html#aeef7875a1419c0dfee5cebad8e184c99',1,'handle_sigtstp(int sig):&#160;signals.c'],['../signals_8h.html#aeef7875a1419c0dfee5cebad8e184c99',1,'handle_sigtstp(int sig):&#160;signals.c']]],
-  ['history_3',['history',['../history_8c.html#ad0a392c5830ddbe5bbf88eee7daf86bd',1,'history(int nargs, char **args):&#160;history.c'],['../internal__commands_8h.html#ad0a392c5830ddbe5bbf88eee7daf86bd',1,'history(int nargs, char **args):&#160;history.c']]]
+  ['get_5fdetails_0',['get_details',['../ls_8c.html#a9f3ac72541846d667d3445774502e755',1,'ls.c']]],
+  ['get_5fhistory_1',['get_history',['../history_8c.html#a42c8fbab00df74780a7723f8dc4c1a97',1,'get_history():&#160;history.c'],['../history_8h.html#a42c8fbab00df74780a7723f8dc4c1a97',1,'get_history():&#160;history.c']]],
+  ['get_5fjob_2',['get_job',['../job__store_8c.html#a93b34bc2c96f6a45fce11983d6766d0e',1,'get_job(pid_t pgid):&#160;job_store.c'],['../job__store_8h.html#a93b34bc2c96f6a45fce11983d6766d0e',1,'get_job(pid_t pgid):&#160;job_store.c']]],
+  ['get_5fjob_5flist_3',['get_job_list',['../job__store_8c.html#a2e3ef658e6c9a4ba16e4f8e8bf094874',1,'get_job_list():&#160;job_store.c'],['../job__store_8h.html#a2e3ef658e6c9a4ba16e4f8e8bf094874',1,'get_job_list():&#160;job_store.c']]]
 ];

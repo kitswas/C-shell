@@ -118,7 +118,6 @@ $(function(){initNavTree('history_8c.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">history.c File Reference</div></div>
@@ -132,11 +131,6 @@ $(function(){initNavTree('history_8c.html',''); initResizable(true); });
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="history_8h.html">history.h</a>&quot;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhistory__list.html">history_list</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0e785b5c430c0e275c9c0616fb227003" id="r_a0e785b5c430c0e275c9c0616fb227003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e785b5c430c0e275c9c0616fb227003">add_to_history</a> (char *line)</td></tr>
@@ -145,6 +139,9 @@ Functions</h2></td></tr>
 <tr class="memitem:afc991fdb1e95d7cafb1c6fe42f5956cd" id="r_afc991fdb1e95d7cafb1c6fe42f5956cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc991fdb1e95d7cafb1c6fe42f5956cd">clear_history</a> ()</td></tr>
 <tr class="memdesc:afc991fdb1e95d7cafb1c6fe42f5956cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history.  <br /></td></tr>
 <tr class="separator:afc991fdb1e95d7cafb1c6fe42f5956cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c8fbab00df74780a7723f8dc4c1a97" id="r_a42c8fbab00df74780a7723f8dc4c1a97"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structhistory__list.html">history_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c8fbab00df74780a7723f8dc4c1a97">get_history</a> ()</td></tr>
+<tr class="memdesc:a42c8fbab00df74780a7723f8dc4c1a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the history list.  <br /></td></tr>
+<tr class="separator:a42c8fbab00df74780a7723f8dc4c1a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a644c02ab268388b89f36fba41c8e9aa2" id="r_a644c02ab268388b89f36fba41c8e9aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a644c02ab268388b89f36fba41c8e9aa2">print_history</a> (int n)</td></tr>
 <tr class="memdesc:a644c02ab268388b89f36fba41c8e9aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the last <code>n</code> commands in the history.  <br /></td></tr>
 <tr class="separator:a644c02ab268388b89f36fba41c8e9aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +192,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <p>allocate memory and deep copy</p>
+<p>free the memory</p>
 <p>allocate memory and deep copy</p>
 
 </div>
@@ -216,6 +214,26 @@ Variables</h2></td></tr>
 
 <p>Clears the history. </p>
 <p>free the memory</p>
+
+</div>
+</div>
+<a id="a42c8fbab00df74780a7723f8dc4c1a97" name="a42c8fbab00df74780a7723f8dc4c1a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c8fbab00df74780a7723f8dc4c1a97">&#9670;&#160;</a></span>get_history()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structhistory__list.html">history_list</a> * get_history </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the history list. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the history list. </dd></dl>
 
 </div>
 </div>

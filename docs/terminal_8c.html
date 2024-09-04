@@ -129,6 +129,7 @@ $(function(){initNavTree('terminal_8c.html',''); initResizable(true); });
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="internal__commands_8h.html">internal_commands.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="history_8h.html">internal/history.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="terminal_8h.html">terminal.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -138,8 +139,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad8c3e8e334df8597f219739a3b7316d2" id="r_ad8c3e8e334df8597f219739a3b7316d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8c3e8e334df8597f219739a3b7316d2">starts_with</a> (const char *restrict string, const char *restrict prefix)</td></tr>
-<tr class="separator:ad8c3e8e334df8597f219739a3b7316d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4dc0eac9725bb8d88ea0af95d80e20" id="r_a1d4dc0eac9725bb8d88ea0af95d80e20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d4dc0eac9725bb8d88ea0af95d80e20">backspace</a> (size_t n)</td></tr>
+<tr class="memdesc:a1d4dc0eac9725bb8d88ea0af95d80e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a 'backspace' n times.  <br /></td></tr>
+<tr class="separator:a1d4dc0eac9725bb8d88ea0af95d80e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc51cd121c86fe5a560f1f54f71a64d" id="r_acdc51cd121c86fe5a560f1f54f71a64d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc51cd121c86fe5a560f1f54f71a64d">read_line</a> (char *buffer, size_t buffer_size)</td></tr>
 <tr class="memdesc:acdc51cd121c86fe5a560f1f54f71a64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line from stdin.  <br /></td></tr>
 <tr class="separator:acdc51cd121c86fe5a560f1f54f71a64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +150,25 @@ Functions</h2></td></tr>
 <tr class="separator:afc4a340f4a9e37af742ab63e2ccf0579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1d4dc0eac9725bb8d88ea0af95d80e20" name="a1d4dc0eac9725bb8d88ea0af95d80e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4dc0eac9725bb8d88ea0af95d80e20">&#9670;&#160;</a></span>backspace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void backspace </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints a 'backspace' n times. </p>
+
+</div>
+</div>
 <a id="acdc51cd121c86fe5a560f1f54f71a64d" name="acdc51cd121c86fe5a560f1f54f71a64d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acdc51cd121c86fe5a560f1f54f71a64d">&#9670;&#160;</a></span>read_line()</h2>
 
@@ -213,27 +234,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success. </dd></dl>
-
-</div>
-</div>
-<a id="ad8c3e8e334df8597f219739a3b7316d2" name="ad8c3e8e334df8597f219739a3b7316d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8c3e8e334df8597f219739a3b7316d2">&#9670;&#160;</a></span>starts_with()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int starts_with </td>
-          <td>(</td>
-          <td class="paramtype">const char *restrict</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *restrict</td>          <td class="paramname"><span class="paramname"><em>prefix</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
