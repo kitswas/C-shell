@@ -10,6 +10,11 @@
 // global variables here
 
 // structs here
+struct history_list
+{
+	char *hist[MAX_HISTORY_ITEMS];
+	int count;
+};
 
 // functions here
 
@@ -24,6 +29,13 @@ void add_to_history(char *line);
  * @brief Clears the history.
  */
 void clear_history();
+
+/**
+ * @brief Gets the history list.
+ *
+ * @return Pointer to the history list.
+ */
+const struct history_list *get_history();
 
 /**
  * @brief Prints the last `n` commands in the history.

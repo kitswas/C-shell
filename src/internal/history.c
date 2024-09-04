@@ -8,11 +8,7 @@
 
 const char *const history_file = ".chistory";
 
-struct history_list
-{
-	char *hist[MAX_HISTORY_ITEMS];
-	int count;
-} h_list;
+struct history_list h_list;
 
 void add_to_history(char *line)
 {
@@ -23,6 +19,7 @@ void add_to_history(char *line)
 	}
 	else
 	{
+		free(h_list.hist[0]); //! free the memory
 		for (int i = 0; i < MAX_HISTORY_ITEMS - 1; i++)
 		{
 			h_list.hist[i] = h_list.hist[i + 1];
@@ -39,6 +36,11 @@ void clear_history()
 		h_list.hist[i] = NULL;
 	}
 	h_list.count = 0;
+}
+
+const struct history_list *get_history()
+{
+	return &h_list;
 }
 
 void print_history(int n)

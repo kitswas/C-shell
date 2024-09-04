@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "internal_commands.h"
+#include "internal/history.h"
 #include "terminal.h"
 
 int starts_with(const char *restrict string, const char *restrict prefix)
@@ -36,6 +37,11 @@ size_t read_line(char *buffer, size_t buffer_size)
 {
 	set_term_flag(STDIN_FILENO, ICANON | ECHO, false);
 
+	// for history navigation
+	const struct history_list *h_list = get_history();
+	int pos = h_list->count;
+	size_t len = 0;
+
 	int ch = 0;
 	size_t i = 0;
 	do
@@ -51,10 +57,50 @@ size_t read_line(char *buffer, size_t buffer_size)
 				switch (ch)
 				{
 				case 'A': // up arrow
-					// implement history
+					if (h_list->count == 0)
+						break;
+					if (pos - 1 >= 0)
+						--pos;
+					while (i > 0)
+					{
+						putchar('\b');
+						putchar(' ');
+						putchar('\b');
+						--i;
+					}
+					len = strlen(h_list->hist[pos]);
+					strcpy(buffer, h_list->hist[pos]);
+					printf("%s", buffer);
+					i = len;
 					break;
 				case 'B': // down arrow
-					// do nothing
+					if (pos + 1 < h_list->count)
+						++pos;
+					else if (pos + 1 == h_list->count) // if we are at the end of the history list
+					{
+						while (i > 0)
+						{
+							putchar('\b');
+							putchar(' ');
+							putchar('\b');
+							--i;
+						}
+						buffer[0] = '\0';
+						break;
+					}
+					if (pos == h_list->count)
+						break;
+					while (i > 0)
+					{
+						putchar('\b');
+						putchar(' ');
+						putchar('\b');
+						--i;
+					}
+					len = strlen(h_list->hist[pos]);
+					strcpy(buffer, h_list->hist[pos]);
+					printf("%s", buffer);
+					i = len;
 					break;
 				case 'C': // right arrow
 					// do nothing
