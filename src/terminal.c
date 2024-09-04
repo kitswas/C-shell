@@ -33,6 +33,25 @@ static int filter_wrapper(const struct dirent *entry)
 	return filter(entry, filter_ctx->buffer);
 }
 
+/**
+ * @brief Prints a 'backspace' n times.
+ */
+void backspace(size_t n)
+{
+	for (size_t i = 0; i < n; ++i)
+	{
+		// \b is the backspace character
+		// it moves the cursor one character to the left
+		// but does not delete the character
+		// so we need to print a space to overwrite the character
+		// and then move the cursor back again
+
+		putchar('\b');
+		putchar(' ');
+		putchar('\b');
+	}
+}
+
 size_t read_line(char *buffer, size_t buffer_size)
 {
 	set_term_flag(STDIN_FILENO, ICANON | ECHO, false);
@@ -61,13 +80,8 @@ size_t read_line(char *buffer, size_t buffer_size)
 						break;
 					if (pos - 1 >= 0)
 						--pos;
-					while (i > 0)
-					{
-						putchar('\b');
-						putchar(' ');
-						putchar('\b');
-						--i;
-					}
+					backspace(i);
+					i = 0;
 					len = strlen(h_list->hist[pos]);
 					strcpy(buffer, h_list->hist[pos]);
 					printf("%s", buffer);
@@ -78,25 +92,15 @@ size_t read_line(char *buffer, size_t buffer_size)
 						++pos;
 					else if (pos + 1 == h_list->count) // if we are at the end of the history list
 					{
-						while (i > 0)
-						{
-							putchar('\b');
-							putchar(' ');
-							putchar('\b');
-							--i;
-						}
+						backspace(i);
+						i = 0;
 						buffer[0] = '\0';
 						break;
 					}
 					if (pos == h_list->count)
 						break;
-					while (i > 0)
-					{
-						putchar('\b');
-						putchar(' ');
-						putchar('\b');
-						--i;
-					}
+					backspace(i);
+					i = 0;
 					len = strlen(h_list->hist[pos]);
 					strcpy(buffer, h_list->hist[pos]);
 					printf("%s", buffer);
@@ -121,14 +125,7 @@ size_t read_line(char *buffer, size_t buffer_size)
 			{
 				buffer[i - 1] = '\0';
 				--i;
-				putchar('\b');
-				// \b is the backspace character
-				// it moves the cursor one character to the left
-				// but does not delete the character
-				// so we need to print a space to overwrite the character
-				// and then move the cursor back again
-				putchar(' ');
-				putchar('\b');
+				backspace(1);
 			}
 			continue;
 		case 3: // ctrl-c
