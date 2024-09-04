@@ -1,3 +1,8 @@
+/**
+ * @file terminal.c
+ * @brief User input handling and terminal manipulation.
+ */
+
 #include <dirent.h>
 #include <stdlib.h>
 #include <stdio.h>

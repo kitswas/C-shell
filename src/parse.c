@@ -1,3 +1,8 @@
+/**
+ * @file parse.c
+ * @brief The parser.
+ */
+
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>

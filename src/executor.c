@@ -1,3 +1,8 @@
+/**
+ * @file executor.c
+ * @brief This file is the heart of the shell, where commands are executed.
+ */
+
 #include <errno.h>
 #include <signal.h>
 #include <stdlib.h>
