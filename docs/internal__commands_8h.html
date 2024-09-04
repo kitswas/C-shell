@@ -158,6 +158,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a32119340c4609e634eaa58c6e84c3e58" id="r_a32119340c4609e634eaa58c6e84c3e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32119340c4609e634eaa58c6e84c3e58">quit_shell</a> ()</td></tr>
 <tr class="memdesc:a32119340c4609e634eaa58c6e84c3e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit the shell with status 0.  <br /></td></tr>
 <tr class="separator:a32119340c4609e634eaa58c6e84c3e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e29e0938fa89db2fcc3ea54abf6cebf" id="r_a3e29e0938fa89db2fcc3ea54abf6cebf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e29e0938fa89db2fcc3ea54abf6cebf">search</a> (int nargs, char **args)</td></tr>
+<tr class="memdesc:a3e29e0938fa89db2fcc3ea54abf6cebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a given file or folder under the current directory recursively.  <br /></td></tr>
+<tr class="separator:a3e29e0938fa89db2fcc3ea54abf6cebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header file contains declarations for the internal commands. </p>
@@ -393,6 +396,30 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3e29e0938fa89db2fcc3ea54abf6cebf" name="a3e29e0938fa89db2fcc3ea54abf6cebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e29e0938fa89db2fcc3ea54abf6cebf">&#9670;&#160;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int search </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nargs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for a given file or folder under the current directory recursively. </p>
+<p>Prints True or False to stdout depending on whether the file or folder exists. </p>
 
 </div>
 </div>
