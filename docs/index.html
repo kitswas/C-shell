@@ -144,9 +144,25 @@ How it works</h1>
 <li>The output of one command will be piped to the input of the next command.</li>
 <li>The output of the last command in the job will be printed to the console.</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>Some shell built-ins like <code>cd</code>, <code>cls</code>, <code>exit</code> and <code>jobs</code> are executed in the top-level shell process due to their nature. <br  />
- If found at the beginning of a job, the rest of the pipeline will not be executed. <br  />
- If found in the middle of a pipeline, the shell will complain about the command not being found.</dd></dl>
+<h2><a class="anchor" id="pitfalls-to-avoid"></a>
+Pitfalls to avoid</h2>
+<ul>
+<li><b>Some shell built-ins like <code>cd</code>, <code>cls</code>, <code>exit</code> and <code>jobs</code> are executed in the top-level shell process due to their nature.</b> <br  />
+<ul>
+<li><em>e.g.</em> <code>cd ..</code> will change the directory of the shell process.</li>
+<li><em>e.g.</em> <code>exit</code> will exit the shell process.</li>
+<li>If found at the beginning of a job, the rest of the pipeline will not be executed. <br  />
+</li>
+<li>If found in the middle of a pipeline, the shell will complain about the command not being found.</li>
+</ul>
+</li>
+<li><b>The redirection operators <code>&gt;</code>, <code>&gt;&gt;</code> and <code>&lt;</code> must be space separated from the command and the file name.</b> <br  />
+<ul>
+<li><em>e.g.</em> <code>echo "Hello, World!" &gt; file.txt</code> is valid.</li>
+<li><em>e.g.</em> <code>echo "Hello, World!"&gt;file.txt</code> is invalid.</li>
+</ul>
+</li>
+</ul>
 <h1><a class="anchor" id="setting-up-your-workspace"></a>
 Setting up your workspace</h1>
 <p>This project has a <a href="https://editorconfig.org/">.editorconfig file</a> to enforce project level coding standards. <br  />
@@ -159,15 +175,18 @@ How to run</h1>
 <div class="fragment"><div class="line">cmake -B build</div>
 <div class="line">cmake --build build --config Release</div>
 <div class="line">./build/cshell</div>
-</div><!-- fragment --><h1><a class="anchor" id="generating-documentation"></a>
-Generating Documentation</h1>
+</div><!-- fragment --><h1><a class="anchor" id="generating-and-viewing-documentation"></a>
+Generating and Viewing Documentation</h1>
 <p>This project uses <a href="https://www.doxygen.nl/index.html">Doxygen</a> to generate documentation. <br  />
  If Doxygen is available on your system, <br  />
  You can generate the documentation by running the following command:</p>
 <div class="fragment"><div class="line">doxygen Doxyfile</div>
-</div><!-- fragment --><p>The generated documentation can be viewed at <a href="./docs/index.html">/docs</a>.</p>
-<p>This repository also has an automated workflow to generate documentatation via Github Actions. <br  />
- </p>
+</div><!-- fragment --><p>This repository also has an automated workflow to generate documentatation via Github Actions. <br  />
+</p>
+<p>The generated documentation can be viewed at <a href="./docs/index.html">/docs</a>.</p>
+<div class="fragment"><div class="line">open docs/index.html # or open the file from the OS file manager</div>
+</div><!-- fragment --><div class="fragment"><div class="line">pushd docs ; python3 -m https.server 9999; popd # if you have python installed and want to use a server</div>
+</div><!-- fragment --><p>A good starting point to explore the codebase is the <a href="./docs/files.html">file listing page</a>. (<a href="files.html">files.html</a> if you are viewing this in a browser) </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

@@ -10,9 +10,10 @@ var searchData=
   ['pinfo_7',['pinfo',['../pinfo_8c.html#ad37d3d14336bc40d58a1185b767ada3e',1,'pinfo(pid_t pid):&#160;pinfo.c'],['../internal__commands_8h.html#ad37d3d14336bc40d58a1185b767ada3e',1,'pinfo(pid_t pid):&#160;pinfo.c']]],
   ['pinfo_2ec_8',['pinfo.c',['../pinfo_8c.html',1,'']]],
   ['pipe_5fdelim_9',['PIPE_DELIM',['../parse_8h.html#a9e0bee8f6cc34a0d3161a50b6f7efc74',1,'parse.h']]],
-  ['print_5fdir_5fentries_10',['print_dir_entries',['../ls_8c.html#a6d23d2c3fcbcc25a1c96bc993eee26e1',1,'ls.c']]],
-  ['print_5fhistory_11',['print_history',['../history_8c.html#a644c02ab268388b89f36fba41c8e9aa2',1,'print_history(int n):&#160;history.c'],['../history_8h.html#a644c02ab268388b89f36fba41c8e9aa2',1,'print_history(int n):&#160;history.c']]],
-  ['print_5fprompt_12',['print_prompt',['../main_8c.html#a599d4f40a5e145d7a701ec49b73426a6',1,'print_prompt():&#160;main.c'],['../main_8h.html#a599d4f40a5e145d7a701ec49b73426a6',1,'print_prompt():&#160;main.c']]],
-  ['pwd_13',['pwd',['../pwd_8c.html#a467b6faef32b6d8358839a8c9bf72cd5',1,'pwd(int nargs, char **args):&#160;pwd.c'],['../internal__commands_8h.html#a467b6faef32b6d8358839a8c9bf72cd5',1,'pwd(int nargs, char **args):&#160;pwd.c']]],
-  ['pwd_2ec_14',['pwd.c',['../pwd_8c.html',1,'']]]
+  ['pitfalls_20to_20avoid_10',['Pitfalls to avoid',['../index.html#pitfalls-to-avoid',1,'']]],
+  ['print_5fdir_5fentries_11',['print_dir_entries',['../ls_8c.html#a6d23d2c3fcbcc25a1c96bc993eee26e1',1,'ls.c']]],
+  ['print_5fhistory_12',['print_history',['../history_8c.html#a644c02ab268388b89f36fba41c8e9aa2',1,'print_history(int n):&#160;history.c'],['../history_8h.html#a644c02ab268388b89f36fba41c8e9aa2',1,'print_history(int n):&#160;history.c']]],
+  ['print_5fprompt_13',['print_prompt',['../main_8c.html#a599d4f40a5e145d7a701ec49b73426a6',1,'print_prompt():&#160;main.c'],['../main_8h.html#a599d4f40a5e145d7a701ec49b73426a6',1,'print_prompt():&#160;main.c']]],
+  ['pwd_14',['pwd',['../pwd_8c.html#a467b6faef32b6d8358839a8c9bf72cd5',1,'pwd(int nargs, char **args):&#160;pwd.c'],['../internal__commands_8h.html#a467b6faef32b6d8358839a8c9bf72cd5',1,'pwd(int nargs, char **args):&#160;pwd.c']]],
+  ['pwd_2ec_15',['pwd.c',['../pwd_8c.html',1,'']]]
 ];
