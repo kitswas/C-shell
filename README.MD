@@ -1,6 +1,6 @@
 # C-shell
 
-A shell written in C. For educational purposes.
+A shell written in C. For educational purposes. [View Source.](https://github.com/kitswas/C-shell)
 
 > [!CAUTION]
 > Warranty NOT included. Use at your own risk.
